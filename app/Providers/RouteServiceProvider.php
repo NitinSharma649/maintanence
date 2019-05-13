@@ -35,11 +35,52 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        $this->mapAdminRoutes();
+
+        $this->mapVendorRoutes();
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
 
         //
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapAdminRoutes()
+    {
+        Route::group([
+            'middleware' => ['web', 'admin'],
+            'prefix' => 'admin',
+            'as' => 'admin.',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/admin.php');
+        });
+    }
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapVendorRoutes()
+    {
+        Route::group([
+            'middleware' => ['web', 'vendor'],
+            'prefix' => 'vendor',
+            'as' => 'vendor.',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/vendor.php');
+        });
     }
 
     /**
