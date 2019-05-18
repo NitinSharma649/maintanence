@@ -1,0 +1,102 @@
+.input-custom {
+    appearance: none;
+	margin-bottom: 4px;
+	padding: 13px 15px 13px;
+	font-size: 16px;
+	line-height: 20px;
+	height: 47px;
+	background: #fff;
+	border: 0;
+	border-radius: 2px;
+	color:  #000;
+	.box-shadow (none);
+	&:hover,
+	&:focus,
+	&.focus {
+		.box-shadow (none);
+		outline: none;
+	}
+	&.input-full {
+		width: 100%;
+	}
+}
+
+.textarea-custom {
+	.input-custom;
+	min-height: 235px;
+	height: auto;
+}
+
+.input-wrapper {
+	position: relative;
+}
+.placeholder {
+	 font-size: 16px; 
+	 line-height: 20px; 
+	 color: #959595;
+}
+input::-webkit-input-placeholder {
+	.placeholder
+}
+input::-moz-placeholder {
+	.placeholder
+}
+input:-ms-input-placeholder {
+	.placeholder
+}
+input:-moz-placeholder {
+	.placeholder
+}
+
+.required {
+	color: red;
+}
+
+input.input-custom, textarea.textarea-custom, .select-wrapper select.input-custom, .select-wrapper select.select-custom{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.contact-form {
+	margin-bottom: 15px;
+	margin-top: 0;
+	.input-custom, .textarea-custom {
+		margin-bottom: 15px;
+		border: 1px solid #dbdbdb;
+		padding: 16px 15px 17px;
+		height: 50px;
+	}
+	
+}
+label {
+	font-size: 17px;
+	line-height: 24px;
+	font-weight: 400;
+	margin-bottom: 5px;
+    color: #000;
+}
+form label.error {
+	display: block;
+	color: #ff0000;
+    font-size: 14px !important;
+    margin-top: -15px;
+	opacity: 1 !important;
+}
+#success, #error, #subscribeSuccess, #subscribeError {
+	display: none;
+	height: 70px;
+}
+#subscribeSuccess, #subscribeError {
+	height: 30px;
+}
+#success span, #error span, #subscribeSuccess span, #subscribeError span{
+	display: block;
+}
+#success span p, #error span p, #subscribeSuccess span p, #subscribeError span p {
+	margin-top: 15px;
+}
+#success span p, #subscribeSuccess span p {
+	color: #2990d6;
+}
+#error span p, #subscribeError span p{
+	color: #c0392b;
+}

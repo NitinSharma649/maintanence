@@ -1,0 +1,68 @@
+					<div class="blog-post">
+
+						<div class="post-image">
+							<a href="blog-single.html"><img src="images/blog/blog-post-img-card-4.jpg" alt="">
+								<div class="post-quote">
+									<div class="vert-wrap">
+										<div class="vert">
+											<p>I love my new heaters. I should have done this years ago. The installation was done professionally and in the time frame allotted. It was a great experience.</p>
+											<div class="quote-author">Michael M. Soderquist</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="post-content">
+							<div class="post-author">by Adam Smith</div>
+							<div class="post-meta"><i class="icon icon-speech"></i><span>12</span></div>
+							<div class="post-date"><span class="day">11</span><span class="month">sept</span></div>
+							<h3 class="post-title"><a href="#">Don’t get shocked! Install GFCIs…  make sure they work.</a></h3>
+							<div class="post-teaser">
+								<p>For decades, ground fault circuit interrupters (GFCIs) have saved thousands of lives and have helped significantly reduce the number of home electrocutions by about fifty percent.</p>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="blog-post">
+						<div class="post-image">
+							<div class="post-carousel">
+								<a href="#"><img src="images/blog/blog-post-img-card-2.jpg" alt=""></a>
+								<a href="#"><img src="images/blog/blog-post-img-card-2-1.jpg" alt=""></a>
+								<a href="#"><img src="images/blog/blog-post-img-card-2-2.jpg" alt=""></a>
+							</div>
+						</div>
+						<div class="post-content">
+							<div class="post-author">by Adam Smith</div>
+							<div class="post-meta"><i class="icon icon-speech"></i><span>12</span></div>
+							<div class="post-date"><span class="day">25</span><span class="month">sept</span></div>
+							<h3 class="post-title"><a href="#">Commercial Renovation No Problem with Certified Electrician</a></h3>
+							<div class="post-teaser">
+								<p>If you are interested in purchasing an old building for commercial use or maybe your business is in an old building that needs a serious upgrade, you will need a specialized crew of professionals to make it happen. </p>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="blog-post">
+						<div class="post-image">
+							<a href="blog-single.html"><img src="images/blog/blog-post-img-card-3.jpg" alt=""></a>
+							<div class="post-link-wrapper">
+								<div class="vert-wrap">
+									<div class="vert">
+										<a href="#" class="post-link">http://www.lawncarelink.com</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="post-content">
+							<div class="post-author">by Adam Smith</div>
+							<div class="post-meta"><i class="icon icon-speech"></i><span>12</span></div>
+							<div class="post-date"><span class="day">14</span><span class="month">sept</span></div>
+							<h3 class="post-title"><a href="#">Commercial Renovation No Problem with Certified Electrician</a></h3>
+							<div class="post-teaser">
+								<p>Decorating your home and the outdoors is an extremely popular activity starting in about October. October and fall weather tends to be very wet. </p>
+							</div>
+						</div>
+					</div>

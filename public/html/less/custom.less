@@ -1,0 +1,137 @@
+/*----------------------------------------
+[Table of contents]
+
+1. Typography
+   1.1 Typography Styles
+   1.2 Page Preloader
+   1.3 Forms
+   1.4 Buttons
+   1.5 Social Icons
+   1.6 Tags   
+   1.7 Calendar
+2. Main Structure
+   2.1 Layout Styles
+   2.2 Header
+       1.2.1 Slide Menu
+   2.3 Footer
+   2.4 Main Slider
+3. Content
+   3.1 Breadcrumbs block
+   3.2 Category block
+   3.3 Pricing block
+   3.4 Video block
+   3.5 Brands block
+   3.6 Text + Icon block
+   3.7 Testimonials block
+   3.8 Request form block
+   3.9 Gallery block
+   3.10 Bulb block
+   3.11 Faq page
+   3.12 Blog page
+4. Plugins overlay styles
+
+
+
+---------------------------------------*/
+
+
+//  Layout Variables
+@custom-color: #252936;
+@custom-color-light: #7a7e8b;
+@custom-color-alt: #f47629;
+@font-main-color: #000;
+@h-color: #4c4c4c;
+@nav-color: #bfc3d0;
+@nav-sub-color: #252936;
+@nav-color-hover: #fff;
+@block-bottom-space: 95px;
+@custom-font: 'Roboto', sans-serif;
+@button-color: #fff;
+@button-bg: @custom-color-alt;
+
+//  Less Mixin
+@import (reference) "mixin.less";
+
+
+
+/*---------------------------------------*/
+/*--------     1. Typography     --------*/
+/*---------------------------------------*/
+/*-------  1.1 Typography Styles --------*/
+@import "typography.less";
+/*-------- 1.2 Page Preloader    --------*/
+@import "loader.less";
+/*-------- 1.3 Forms             --------*/
+@import "forms.less";
+/*-------- 1.4 Buttons           --------*/
+@import "buttons.less";
+/*-------- 1.5 Social Icons      --------*/
+@import "social.less";
+/*-------- 1.6 Tags              --------*/
+@import "tags.less";
+/*-------- 1.7 Calendar          --------*/
+@import "calendar.less";
+
+/*---------------------------------------*/
+/*--------   2. Main Structure   --------*/
+/*---------------------------------------*/
+/*--------   2.1 Layout Styles   --------*/
+@import "layout.less";
+/*--------   2.2 Header          --------*/
+@import "header.less";
+@import "electric-hover.less";
+/*--------   2.2.1 Slide Menu    --------*/
+@import "slidemenu.less";
+/*--------   2.3 Footer          --------*/
+@import "footer.less";
+/*--------   2.4 Main Slider     --------*/
+@import "slider.less";
+
+/*---------------------------------------*/
+/*--------   1. Main Structure   --------*/
+/*---------------------------------------*/
+/*--------   1.1 Layout Styles   --------*/
+@import "layout.less";
+/*--------   1.2 Header          --------*/
+@import "header.less";
+@import "electric-hover.less";
+/*--------   1.2.1 Slide Menu    --------*/
+@import "slidemenu.less";
+/*--------   1.3 Footer          --------*/
+@import "footer.less";
+/*--------   1.4 Main Slider     --------*/
+@import "slider.less";
+
+/*---------------------------------------*/
+/*--------       3. Content      --------*/
+/*---------------------------------------*/
+/*-----  3.1 Breadcrumbs block   --------*/
+@import "breadcrumbs.less";
+/*-----  3.2 Category block      --------*/
+@import "block-category.less";
+/*-----  3.3 Pricing block       --------*/
+@import "pricing.less";
+/*-----  3.4 Video block --------*/
+@import "video.less";
+/*-----  3.5 Brands block        --------*/
+@import "brands.less";
+/*-----  3.6 Text + Icon block   --------*/
+@import "text-icon.less";
+/*-----  3.7 Testimonials block  --------*/
+@import "testimonials.less";
+/*-----  3.8 Request form block  --------*/
+@import "request-form.less";
+/*-----  3.9 Gallery block       --------*/
+@import "gallery.less";
+/*-----  3.10 Bulb block       --------*/
+@import "block-bulb.less";
+/*-----  3.11 Faq page         --------*/
+@import "faq.less";
+/*-----  3.12 Blog page         --------*/
+@import "blog.less";
+
+
+/*---------------------------------------*/
+/*---- 4. Plugins overlay styles  -------*/
+/*---------------------------------------*/
+@import "slick.less";

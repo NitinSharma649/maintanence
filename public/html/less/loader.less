@@ -1,0 +1,103 @@
+#loader-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10000000;
+	background-color: #fff;
+}
+
+#loader-wrapper.loader-off {
+	display: none !important;
+}
+
+#loader {
+	display: block;
+	margin: -50px 0 0 -150px;
+	height: 100px;
+	width: 300px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+}
+
+.loader {
+  text-align: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 25px;
+  line-height: 100px;
+  margin: 0 auto; 
+
+.bolt {
+  width: 0px; 
+  height: 0px; 
+  border: 15px solid transparent; 
+  border-bottom: 55px solid #f47629; 
+  position: absolute; 
+  margin-top: -100px; 
+  margin-left: 43%; 
+}
+
+.one {
+  margin-left: 0; 
+  transform: rotateZ(-25deg) translateY(7px); 
+  animation: white 0.5s linear infinite; 
+}
+
+.one .other {
+  animation: whitet 0.5s linear infinite; 
+}
+
+.two {
+  border-bottom: 55px solid #FEFEFE; 
+  transform: translateY(-7px); 
+  animation: orange 0.7s linear infinite; 
+}
+
+.two .other {
+  border-top: 55px solid #FEFEFE; 
+  animation: oranget 0.7s linear infinite; 
+}
+
+.three {
+  margin-left: 84%; 
+  transform: rotateZ(25deg) translateY(0px); 
+  animation: white 0.5s linear infinite; 
+}
+
+.three .other {
+  animation: whitet 0.5s linear infinite; 
+}
+
+.other {
+  width: 0px; 
+  height: 0px; 
+  border: 11px solid transparent; 
+  border-top: 55px solid #f47629; 
+  margin-top: 40px; 
+}
+}
+@keyframes white {
+  to {
+    border-bottom-color: #FEFEFE; 
+  }
+}
+
+@keyframes whitet {
+  to {
+    border-top-color: #FEFEFE; 
+  }
+}
+
+@keyframes orange {
+  to {
+    border-bottom-color: #f47629; 
+  }
+}
+
+@keyframes oranget {
+  to {
+    border-top-color: #f47629; 
+  }
+}

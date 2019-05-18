@@ -1,0 +1,31 @@
+.tag {
+	display: block;
+	border: 1px solid @custom-color-alt;
+	color: @custom-color;
+	font-size: 14px;
+	line-height: 25px;
+	padding: 0 10px;
+	text-decoration: none;
+	border-radius: 3px;
+	.transition (all 0.2s ease);
+	&:hover {
+		background-color: @custom-color-alt;
+		border-color: @custom-color-alt;
+		color: #fff;
+	}
+}
+.tags-list {
+	position: relative;
+	list-style: none;
+	margin: 30px 0 0;
+	padding: 0;	
+	li {
+		display: inline-block;
+		padding: 0;
+		margin-bottom: 5px;
+		margin-right: 2px;
+		a {
+			.tag;
+		}
+	}
+}

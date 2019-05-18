@@ -1,0 +1,274 @@
+.slider-wrapper {
+	position: relative;
+	margin-top: -37px;
+}
+
+
+/* Caption styles */
+
+.nivo-caption {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	background: #000;
+	color: #fff;
+	width: 100%;
+	z-index: 10000;
+	padding: 5px 10px;
+	opacity: 0.8;
+	overflow: hidden;
+	display: none;
+	-moz-opacity: 0.8;
+	filter: alpha(opacity=8);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.nivo-caption p {
+	padding: 5px;
+	margin: 0;
+}
+
+.nivo-caption a {
+	display: inline !important;
+}
+
+.nivo-html-caption {
+	display: none;
+}
+
+
+/* Direction nav styles (e.g. Next & Prev) */
+
+.nivo-directionNav a {
+	position: absolute;
+	top: 50%;
+	z-index: 9;
+	cursor: pointer;
+}
+
+.nivo-prevNav {
+	left: 0px;
+}
+
+.nivo-nextNav {
+	right: 0px;
+}
+
+
+/* Control nav styles (e.g. 1,2,3...) */
+
+.nivo-controlNav {
+	text-align: center;
+	padding: 15px 0;
+}
+
+.nivo-controlNav a {
+	cursor: pointer;
+}
+
+.nivo-controlNav a.active {
+	font-weight: bold;
+}
+
+
+/*
+Skin Name: Nivo Slider Default Theme
+*/
+
+.theme-default .nivoSlider {
+	position: relative;
+	background: #fff;
+	margin-bottom: 0;
+}
+
+.theme-default .nivoSlider img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+
+.theme-default .nivoSlider a {
+	border: 0;
+	display: inline-blpck;
+}
+
+.theme-default .nivoSlider a.btn {
+	display: inline-block !important;
+}
+
+.theme-default .nivo-directionNav a {
+	display: block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border: 0;
+	opacity: 0;
+	text-align: center;
+	color: #fff;
+	z-index: 10000;
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-transition: all 200ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out;
+	-o-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+	@media (max-width: 767px) {
+		opacity: 1;
+	}
+}
+
+.theme-default .nivo-directionNav a:before {
+	content: "\e917";
+	font-family: 'Electrician';
+	font-size: 7vw;
+	line-height: 1em;
+}
+
+.theme-default:hover .nivo-directionNav a {
+	opacity: 1;
+}
+
+.theme-default a.nivo-nextNav {
+	right: 15px;
+}
+
+.theme-default a.nivo-prevNav {
+	left: 15px;
+}
+
+@media (max-width:767px) {
+	.theme-default .nivo-directionNav a {
+		width: 40px
+	}
+	.theme-default .nivo-directionNav a:before {
+		font-size: 30px;
+		line-height: 70px;
+	}
+	.theme-default a.nivo-nextNav {
+		right: 0;
+	}
+	.theme-default a.nivo-prevNav {
+		left: 0;
+	}
+}
+
+.theme-default .nivo-directionNav a.nivo-prevNav:before {
+	content: "\e916";
+}
+
+.theme-default .nivo-controlNav.nivo-thumbs-enabled {
+	width: 100%;
+}
+
+.theme-default .nivo-controlNav.nivo-thumbs-enabled a {
+	width: auto;
+	height: auto;
+	background: none;
+	margin-bottom: 5px;
+}
+
+.theme-default .nivo-controlNav.nivo-thumbs-enabled img {
+	display: block;
+	width: 120px;
+	height: auto;
+}
+
+
+/* nivo-caption text */
+
+.nivo-caption .text {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: backwards;
+	-moz-animation-fill-mode: backwards;
+	-ms-animation-fill-mode: backwards;
+	-o-animation-fill-mode: backwards;
+	animation-fill-mode: backwards;
+	-webkit-animation-iteration-count: none;
+	animation-iteration-count: none;
+}
+
+.nivo-caption .text1 {
+	font-family: @custom-font;
+	font-weight: 500;
+	font-size: 86px;
+	margin-bottom: .4em;
+	line-height: 0.9em;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+	-webkit-animation-name: zoomIn;
+	animation-name: zoomIn;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nivo-caption .text2 {
+	font-family: @custom-font;
+	font-weight: 600;
+	font-size: 50px;
+	font-style: italic;
+	margin-bottom: 0.95em;
+	line-height: 1em;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nivo-caption .text3 {
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+	-webkit-animation-name: bounceIn;
+	animation-name: bounceIn;
+}
+
+.nivo-caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 8%;
+	bottom: 0;
+	overflow: hidden;
+	background: 0 0;
+	text-align: center;
+	opacity: 1
+}
+
+.nivo-caption a.btn,
+.nivo-caption a.btn.btn-lg {
+	padding: 12px 30px 17px;
+}
+@media (max-width: 1199px) {
+	.nivo-caption .text1 {
+		font-size: ~'calc(4.5vw + 10px)';
+		margin-bottom: .25em;
+	}
+
+	.nivo-caption .text2 {
+		font-size: ~'calc(2.05vw + 15px)';
+		margin-bottom: 1em;
+	}
+}
+
+@media (max-width: 991px) {
+	.slider-wrapper {
+		margin-top: 0;
+	}
+	.nivo-caption .text1 {
+		font-size: ~'calc(2.5vw + 10px)';
+	}
+	.nivo-caption .text2 {
+		font-size: ~'calc(1.2vw + 10px)';
+	}
+	.nivo-caption a.btn,
+	.nivo-caption a.btn.btn-lg {
+		height: 34px;
+		font-size: 14px;
+		line-height: 20px;
+		padding: 7px 16px 7px;
+		border-radius: 4px;
+	}
+}

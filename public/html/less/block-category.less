@@ -1,0 +1,227 @@
+.category-item {
+	margin-bottom: 50px;
+	text-align: center;
+	.category-image {
+		position: relative;
+		margin-bottom: 15px;
+		overflow: hidden;
+		text-align: center;
+		a {
+			margin: 0 auto;
+			display: inline-block;
+		}
+		&:before {
+			content: "";
+			z-index: 1;
+			position: absolute;
+			left: -200%;
+			top: 0;
+			width: 200%;
+			height: 100%;
+			background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .7) 50%, rgba(255, 255, 255, 0) 100%);
+			.transition (0s ease-in-out);
+			pointer-events: none;
+		}
+		img {
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			image-rendering: optimizeQuality;
+			-webkit-transform: translateZ(0) scale(1.0, 1.0);
+		}
+	}
+	&:hover {
+		.category-image:before {
+			left: 200%;
+			.transition (.8s ease-in-out);
+		}
+	}
+	.category-title {
+		margin-bottom: 10px;
+		font-weight: 500;
+		text-transform: none;
+	}
+	.category-text {
+		font-size: 16px;
+		line-height: 22px;
+		font-weight: 400;
+	}
+}
+
+
+@media (min-width: 768px) {
+	.category-carousel [class*="col-"] {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+		margin-right: -4px;
+	}
+}
+
+//skew category
+@media (min-width: 768px) {
+	.skew-wrapper {
+		position: relative;
+		overflow: hidden;
+		height: 450px;
+		padding: 0;
+		background: #252936;
+		.container {
+			height: 100%;
+			padding: 0 35px;
+		}
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 210px;
+			z-index: 100;
+			background: url(../images/flash.png) no-repeat center top;
+		}
+		&:after {
+			left: auto;
+			right: 0;
+		}
+		.skew {
+			transform: skew(16deg, 0);
+			overflow: hidden;
+			display: block;
+			width: 33.333333%;
+			height: 100%;
+			position: relative;
+			float: left;
+			transition: all 0.3s ease 0.05s;
+			&:before {
+				content: "";
+				z-index: 100;
+				position: absolute;
+				left: -100%;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, 0) 100%);
+				.transition (0s ease-in-out);
+				pointer-events: none;
+			}
+			&:hover {
+				&:before {
+					left: 100%;
+					.transition (.5s ease-in-out);
+				}
+			}
+		}
+		.skew + .skew {
+			margin-left: -2px;
+		}
+		.skew .straight-image {
+			background-position: center;
+			background-repeat: repeat;
+		}
+		.skew.min {
+			width: 25%;
+			//opacity: 0.5 ;
+		}
+		.skew.active {
+			width: 50%;
+			//opacity: 1;
+			z-index: 99;
+		}
+		.straight-image {
+			position: absolute;
+			height: 100%;
+			width: 200%;
+			left: -50%;
+			transform: skew(-16deg, 0);
+		}
+		.straight {
+			position: absolute;
+			transform: translate(-50%, -50%) skew(-16deg, 0);
+			display: block;
+			text-align: center;
+			top: 50%;
+			left: 50%;
+			z-index: 10;
+			.title {
+				display: block;
+				margin-bottom: 20px;
+				font-size: 38px;
+				line-height: 40px;
+				font-weight: 500;
+				letter-spacing: 0.01em;
+				color: #fff;
+			}
+		}
+	}
+}
+
+@media (max-width: 1199px) {
+	.skew-wrapper {
+		height: 350px;
+		padding: 0 50px;
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+}
+@media (min-width: 768px) and  (max-width: 991px) {
+	.skew-wrapper .straight .title {
+		font-size: 28px;
+	}
+}
+
+@media (max-width: 767px) {
+	.skew-wrapper {
+		position: relative;
+		overflow: hidden;
+		height: 450px;
+		background: #252936;
+		padding: 0;
+		.skew {
+			overflow: hidden;
+			display: block;
+			width: 100%%;
+			height: 450px;
+			position: relative;
+		}
+		.skew .straight-image {
+			background-position: center;
+			background-repeat: repeat;
+		}
+		.straight-image {
+			position: absolute;
+			top: 0;
+			height: 450px;
+			width: 100%;
+			transform: none;
+		}
+		.straight {
+			position: absolute;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			top: 50%;
+			left: 50%;
+			z-index: 10;
+			.title {
+				display: block;
+				margin-bottom: 1em;
+				font-size: 38px;
+				line-height: 40px;
+				font-weight: 400;
+				color: #fff;
+				text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+			}
+		}
+		.slick-prev {
+			left: -10px;
+		}		
+		.slick-next {
+			right: -10px;
+		}
+		.slick-dots {
+			bottom: 0 !important;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+.price-table {
+	&>tbody>tr.table-header {
+		background: @custom-color-alt !important;
+		border-bottom: 6px solid #fff;
+	}
+	&>tbody>tr>th {
+		color: #fff;
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 500;
+		border: 0;
+		padding: 18px 20px 17px;
+	}
+	&>tbody>tr>td {
+		border: 0;
+		padding: 13px 20px 12px;
+		font-size: 16px;
+		line-height: 22px;
+		font-weight: 400;
+	}
+	&>tbody>tr:nth-of-type(even) {
+		background-color: #f4f4f5;
+	}
+	&>tbody>tr:nth-of-type(odd) {
+		background-color: #eeeef3;
+	}
+}

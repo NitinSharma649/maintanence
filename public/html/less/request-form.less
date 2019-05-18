@@ -1,0 +1,73 @@
+.request-form {
+	position: relative;
+	.inside {
+		background-color: @custom-color;
+		padding: 22px 25px 19px;
+		color: #fff;
+	}
+	h4 {
+		margin-bottom: 0;
+		display: inline-block;
+		font-size: 24px;
+		line-height: 26px;
+		padding: 10px 25px;
+		font-weight: 500;
+		color: #fff;
+		background-color: @custom-color-alt;
+		border-radius: 6px 6px 0 0;
+		text-transform: none;
+	}
+	form {
+		input[type=text] {
+			display: inline-block;
+			vertical-align: top;
+			width: 314px;
+			margin-right: 8px;
+		}
+		button {
+			display: inline-block;
+			vertical-align: top;
+			float: right;
+		}
+		.placeholder-dark {
+			 color: @custom-color;
+		}
+		input::-webkit-input-placeholder {
+			.placeholder-dark
+		}
+		input::-moz-placeholder {
+			.placeholder-dark
+		}
+		input:-ms-input-placeholder {
+			.placeholder-dark
+		}
+		input:-moz-placeholder {
+			.placeholder-dark
+		}
+	}
+}
+
+@media (max-width: 1199px) {
+	.request-form form input[type=text] {
+		width: 236px;
+	}
+}
+
+@media (max-width: 991px) {
+	.request-form form input[type=text] {
+		width: 157px;
+	}
+}
+
+@media (max-width: 767px) {
+	.request-form form input[type=text],
+	.request-form form button {
+		display: block;
+		width: 100%;
+		margin: 0 0 10px;
+		float: none;
+	}
+	.request-form form button {
+		margin: 0;
+	}
+}

@@ -1,0 +1,27 @@
+.social-links {
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline-block;
+			margin: 0 7px 5px 0;
+			list-style: none;
+			text-align: center;
+			a {
+				font-size: 36px;
+				color: #d0d0d0;
+				text-decoration: none;
+				cursor: pointer;
+				&:hover {
+					color: @custom-color-alt;
+				}
+				.transition (color 0.3s ease);
+			}
+		}
+	}
+}
+@media (max-width: 1199px) {
+	.page-content .social-links ul li {
+    	margin: 0 0 3px 0;
+	}
+}

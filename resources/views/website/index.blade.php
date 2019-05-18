@@ -1,677 +1,275 @@
 @extends('layouts.main')
 
 @section('css')
-    <!-- additional styles for plugins -->
-    <!-- weather icons -->
-    <link rel="stylesheet" href="{{ asset('theme/bower_components/weather-icons/css/weather-icons.min.css') }}" media="all">
-    <!-- metrics graphics (charts) -->
-    <link rel="stylesheet" href="{{ asset('theme/bower_components/metrics-graphics/dist/metricsgraphics.css') }}">
-    <!-- chartist -->
-    <link rel="stylesheet" href="{{ asset('theme/bower_components/chartist/dist/chartist.min.css') }}">
+    
+@endsection
 
-
+@section('bodyTag')
+    <body class="home">
 @endsection
 
 @section('content')
 
-    <!-- statistics (small charts) -->
-    <div class="uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-2 uk-grid-medium uk-sortable sortable-handler hierarchical_show" data-uk-sortable data-uk-grid-margin>
-        <div>
-            <div class="md-card">
-                <div class="md-card-content">
-                    <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_visitors peity_data">5,3,9,6,5,9,7</span></div>
-                    <span class="uk-text-muted uk-text-small">Visitors (last 7d)</span>
-                    <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>12456</noscript></span></h2>
-                </div>
+<!-- Slider -->
+<div class="slider-wrapper theme-default">
+    <div id="slider" class="nivoSlider"> <img src="{{ asset('html/images/slider/slide1.jpg') }}" title="#htmlcaption1" data-thumb="{{ asset('html/images/slider/slide1.jpg') }}" alt="" /> <img src="{{ asset('html/images/slider/slide2.jpg') }}" title="#htmlcaption2" data-thumb="{{ asset('html/images/slider/slide2.jpg') }}" alt="" /> <img src="{{ asset('html/images/slider/slide3.jpg') }}" title="#htmlcaption3" data-thumb="{{ asset('html/images/slider/slide3.jpg') }}" alt="" /> </div>
+    <div id="htmlcaption1" class="nivo-caption">
+        <div class="vert-wrapper">
+            <div class="vert">
+                <div class="text text1">We’re the Current
+                    <br>Specialist!</div>
+                <div class="text text2 margin-bottom">keeping you wired</div>
+                <div class="text text3"><a href="#" class="btn btn-lg"><i class="icon icon-lightning"></i><span>Know More</span></a></div>
             </div>
         </div>
-        <div>
-            <div class="md-card">
-                <div class="md-card-content">
-                    <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_sale peity_data">5,3,9,6,5,9,7,3,5,2</span></div>
-                    <span class="uk-text-muted uk-text-small">Sale</span>
-                    <h2 class="uk-margin-remove">$<span class="countUpMe">0<noscript>142384</noscript></span></h2>
-                </div>
+    </div>
+    <div id="htmlcaption2" class="nivo-caption">
+        <div class="vert-wrapper">
+            <div class="vert">
+                <div class="text text1">Best Services for
+                    <br>Your Family</div>
+                <div class="text text2">making our clients happier</div>
+                <div class="text text3"><a href="#" class="btn btn-lg"><i class="icon icon-lightning"></i><span>Know More</span></a></div>
             </div>
         </div>
-        <div>
-            <div class="md-card">
-                <div class="md-card-content">
-                    <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_orders peity_data">64/100</span></div>
-                    <span class="uk-text-muted uk-text-small">Orders Completed</span>
-                    <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>64</noscript></span>%</h2>
-                </div>
+    </div>
+    <div id="htmlcaption3" class="nivo-caption">
+        <div class="vert-wrapper">
+            <div class="vert">
+                <div class="text text1">Nothing is
+                    <br>Impossible for Us</div>
+                <div class="text text2">we can light everything</div>
+                <div class="text text3"><a href="#" class="btn btn-lg"><i class="icon icon-lightning"></i><span>Know More</span></a></div>
             </div>
         </div>
-        <div>
-            <div class="md-card">
-                <div class="md-card-content">
-                    <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_live peity_data">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,7,3,5,2</span></div>
-                    <span class="uk-text-muted uk-text-small">Visitors (live)</span>
-                    <h2 class="uk-margin-remove" id="peity_live_text">46</h2>
+    </div>
+</div>
+<!-- Slider -->
+<!-- Request Block -->
+<div class="block block-negative">
+    <div class="container">
+        <div class="request-form">
+            <h4>Request Service Today</h4>
+            <div class="inside">
+                <form action="#">
+                    <input class="input-custom input-full" type="text" placeholder="First & Last Name:" />
+                    <input class="input-custom input-full" type="text" placeholder="Email Address:" />
+                    <input class="input-custom input-full" type="text" placeholder="Phone Number:" />
+                    <button class="btn"><i class="icon icon-lightning"></i><span>Get Service</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Request Block -->
+<!-- Switch Block -->
+<div class="block">
+    <div class="container">
+        <div class="row bulb-carousel top-negative">
+            <div class="col-sm-4">
+                <div class="bulb-block">
+                    <div class="bulb">
+                        <div class="bulb-img"><img src="{{ asset('html/images/bulb-img-1.jpg') }}" alt=""></div>
+                        <div class="bulb-mask"><img src="{{ asset('html/images/bulbmask.png') }}" alt=""></div>
+                    </div>
+                    <h5 class="bulb-block-title">Switch ON
+                        <br> Higher <b>Standards</b></h5>
+                    <div class="bulb-block-text">for quality work and safety</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="bulb-block">
+                    <div class="bulb">
+                        <div class="bulb-img"><img src="{{ asset('html/images/bulb-img-2.jpg') }}" alt=""></div>
+                        <div class="bulb-mask"><img src="{{ asset('html/images/bulbmask.png') }}" alt=""></div>
+                    </div>
+                    <h5 class="bulb-block-title">Switch ON
+                        <br> Better <b>Solutions</b></h5>
+                    <div class="bulb-block-text">for design and energy saving</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="bulb-block">
+                    <div class="bulb">
+                        <div class="bulb-img"><img src="{{ asset('html/images/bulb-img-3.jpg') }}" alt=""></div>
+                        <div class="bulb-mask"><img src="{{ asset('html/images/bulbmask.png') }}" alt=""></div>
+                    </div>
+                    <h5 class="bulb-block-title">Switch ON
+                        <br> Personal <b>Commitment</b></h5>
+                    <div class="bulb-block-text">for your comfort and security</div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!-- circular charts -->
-    <div class="uk-grid uk-grid-width-small-1-2 uk-grid-width-large-1-3 uk-grid-width-xlarge-1-5 uk-text-center uk-sortable sortable-handler" id="dashboard_sortable_cards" data-uk-sortable data-uk-grid-margin>
-        <div>
-            <div class="md-card md-card-hover md-card-overlay">
-                <div class="md-card-content">
-                    <div class="epc_chart" data-percent="76" data-bar-color="#03a9f4">
-                        <span class="epc_chart_icon"><i class="material-icons">&#xE0BE;</i></span>
-                    </div>
-                </div>
-                <div class="md-card-overlay-content">
-                    <div class="uk-clearfix md-card-overlay-header">
-                        <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
-                        <h3>
-                            User Messages
-                        </h3>
-                    </div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias consectetur.
-                </div>
+</div>
+<!-- //Switch Block -->
+<!-- Skew Category Block -->
+<div class="block">
+    <div class="skew-wrapper category-carousel light-arrow">
+        <div class="container">
+            <div class="skew"> <span class="straight-image" style="background-image: url({{ asset('html/images/category-img-1.jp') }}g);"></span> <span class="straight"><span class="title">Commercial</span> <a class="btn btn-sm" href="#"><span>More info</span></a> </span>
+            </div>
+            <div class="skew"> <span class="straight-image" style="background-image: url({{ asset('html/images/category-img-2.jp') }}g);"></span> <span class="straight"><span class="title">Industrial</span> <a class="btn btn-sm" href="#"><span>More info</span></a> </span>
+            </div>
+            <div class="skew"> <span class="straight-image" style="background-image: url({{ asset('html/images/category-img-3.jpg') }});"></span> <span class="straight"><span class="title">Residential</span> <a class="btn btn-sm" href="#"><span>More info</span></a> </span>
             </div>
         </div>
-        <div>
-            <div class="md-card md-card-hover md-card-overlay">
-                <div class="md-card-content uk-flex uk-flex-center uk-flex-middle">
-                    <span class="peity_conversions_large peity_data">5,3,9,6,5,9,7</span>
-                </div>
-                <div class="md-card-overlay-content">
-                    <div class="uk-clearfix md-card-overlay-header">
-                        <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
-                        <h3>
-                            Conversions
-                        </h3>
-                    </div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="md-card md-card-hover md-card-overlay md-card-overlay-active">
-                <div class="md-card-content" id="canvas_1">
-                    <div class="epc_chart" data-percent="37" data-bar-color="#9c27b0">
-                        <span class="epc_chart_icon"><i class="material-icons">&#xE85D;</i></span>
-                    </div>
-                </div>
-                <div class="md-card-overlay-content">
-                    <div class="uk-clearfix md-card-overlay-header">
-                        <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
-                        <h3>
-                            Tasks List
-                        </h3>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <button class="md-btn md-btn-primary">More</button>
+    </div>
+</div>
+<!-- //Skew Category Block -->
+<!-- About Block -->
+<div class="block">
+    <div class="container">
+        <h1 class="text-center">About <b>Us</b></h1>
+        <p class="font24 text-center">We are locally owned and operated which makes our services causal as they are done by friendly and helpful technicians.</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="video-responsive">
+                    <iframe src="https://player.vimeo.com/video/103180506"></iframe>
                 </div>
             </div>
+            <div class="divider-sm visible-xs"></div>
+            <div class="col-sm-6">
+                <p>All of our services are backed by our 100% satisfaction guarantee. Our electricians can install anything from new security lighting for your outdoors to a whole home generator that will keep your appliances working during a power outage. Our installation services are always done promptly and safely. </p>
+                <ul class="marker-list">
+                    <li>Full-service electrical layout, design</li>
+                    <li>Wiring and installation/upgrades</li>
+                    <li>Emergency power solutions (generators)</li>
+                    <li>Virtually any electrical needs you have – just ask!</li>
+                </ul> <a href="#" class="btn btn-border"><i class="icon icon-lightning"></i><span>Know more</span></a> </div>
         </div>
-        <div>
-            <div class="md-card md-card-hover md-card-overlay">
-                <div class="md-card-content">
-                    <div class="epc_chart" data-percent="53" data-bar-color="#009688">
-                        <span class="epc_chart_text"><span class="countUpMe">53</span>%</span>
+    </div>
+</div>
+<!-- //About Block -->
+<!-- Question Block -->
+<div class="block bg-dark pad-sm">
+    <div class="container">
+        <div class="text-center">
+            <h3><span class="light">Do you need help with</span> <b>electrical maintenance?</b></h3>
+            <p class="font24">Contact us – our technicians are ready to help you solve that issue.</p>
+            <div class="btn-inline"><a class="btn" href="#"><i class="icon icon-telephone"></i><span>Give Us A Call</span></a><a class="btn btn-invert" href="#"><i class="icon icon-lightning"></i><span>Request A Free Estimate</span></a></div>
+        </div>
+    </div>
+</div>
+<!-- //Question Block -->
+<!-- Services Block -->
+<div class="block bottom-sm">
+    <div class="container">
+        <h2 class="text-center">Our <b>Services</b></h2>
+        <h4 class="text-center subtitle"><i class="icon icon-telephone"></i>1 (800) 765-43-21</h4>
+        <p class="font24 text-center">Never hesitate when it comes to potential electrical problems. Electrical issues can quickly develop into major catastrophes. </p>
+        <div class="row text-icon-carousel">
+            <div class="col-sm-4">
+                <div class="text-icon">
+                    <div class="text-icon-icon"><span><i class="icon icon-light"></i><span class="icon-hover"></span></span>
                     </div>
-                </div>
-                <div class="md-card-overlay-content">
-                    <div class="uk-clearfix md-card-overlay-header">
-                        <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
-                        <h3>
-                            Orders
-                        </h3>
-                    </div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    <h5 class="text-icon-title">Electrical</h5>
+                    <div class="text-icon-text">Wiring, Remodels and Additions, Heat detectors</div>
                 </div>
             </div>
-        </div>
-        <div>
-            <div class="md-card md-card-hover md-card-overlay">
-                <div class="md-card-content">
-                    <div class="epc_chart" data-percent="37" data-bar-color="#607d8b">
-                        <span class="epc_chart_icon"><i class="material-icons">&#xE7FE;</i></span>
+            <div class="col-sm-4">
+                <div class="text-icon">
+                    <div class="text-icon-icon"><span><i class="icon icon-tool"></i><span class="icon-hover"></span></span>
                     </div>
+                    <h5 class="text-icon-title">Heating</h5>
+                    <div class="text-icon-text">Trust our professionals to listen to your needs and problems</div>
                 </div>
-                <div class="md-card-overlay-content">
-                    <div class="uk-clearfix md-card-overlay-header">
-                        <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
-                        <h3>
-                            User Registrations
-                        </h3>
+            </div>
+            <div class="col-sm-4">
+                <div class="text-icon">
+                    <div class="text-icon-icon"><span><i class="icon icon-air-conditioner"></i><span class="icon-hover"></span></span>
                     </div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    <h5 class="text-icon-title">Air Conditioning</h5>
+                    <div class="text-icon-text">Then present you with options that fit your budget and designs</div>
+                </div>
+            </div>
+            <div class="clearfix hidden-xs"></div>
+            <div class="col-sm-4">
+                <div class="text-icon">
+                    <div class="text-icon-icon"><span><i class="icon icon-security-camera"></i><span class="icon-hover"></span></span>
+                    </div>
+                    <h5 class="text-icon-title">Security Systems</h5>
+                    <div class="text-icon-text">You can view events over a monitor in our home</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="text-icon">
+                    <div class="text-icon-icon"><span><i class="icon icon-computer"></i><span class="icon-hover"></span></span>
+                    </div>
+                    <h5 class="text-icon-title">Panels Changes</h5>
+                    <div class="text-icon-text">Prices that meet your needs and budget</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="text-icon">
+                    <div class="text-icon-icon"><span><i class="icon icon-screwdriver"></i><span class="icon-hover"></span></span>
+                    </div>
+                    <h5 class="text-icon-title">Trouble Shooting</h5>
+                    <div class="text-icon-text">We think before we start working to save you money</div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- tasks -->
-    <div class="uk-grid" data-uk-grid-margin data-uk-grid-match="{target:'.md-card-content'}">
-        <div class="uk-width-medium-1-2">
-            <div class="md-card">
-                <div class="md-card-content">
-                    <div class="uk-overflow-container">
-                        <table class="uk-table">
-                            <thead>
-                                <tr>
-                                    <th class="uk-text-nowrap">Task</th>
-                                    <th class="uk-text-nowrap">Status</th>
-                                    <th class="uk-text-nowrap">Progress</th>
-                                    <th class="uk-text-nowrap uk-text-right">Due Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="uk-table-middle">
-                                    <td class="uk-width-3-10 uk-text-nowrap"><a href="scrum_board.html">ALTR-231</a></td>
-                                    <td class="uk-width-2-10 uk-text-nowrap"><span class="uk-badge">In progress</span></td>
-                                    <td class="uk-width-3-10">
-                                        <div class="uk-progress uk-progress-mini uk-progress-warning uk-margin-remove">
-                                            <div class="uk-progress-bar" style="width: 40%;"></div>
-                                        </div>
-                                    </td>
-                                    <td class="uk-width-2-10 uk-text-right uk-text-muted uk-text-small">24.11.2015</td>
-                                </tr>
-                                <tr class="uk-table-middle">
-                                    <td class="uk-width-3-10 uk-text-nowrap"><a href="scrum_board.html">ALTR-82</a></td>
-                                    <td class="uk-width-2-10 uk-text-nowrap"><span class="uk-badge uk-badge-warning">Open</span></td>
-                                    <td class="uk-width-3-10">
-                                        <div class="uk-progress uk-progress-mini uk-progress-success uk-margin-remove">
-                                            <div class="uk-progress-bar" style="width: 82%;"></div>
-                                        </div>
-                                    </td>
-                                    <td class="uk-width-2-10 uk-text-right uk-text-muted uk-text-small">21.11.2015</td>
-                                </tr>
-                                <tr class="uk-table-middle">
-                                    <td class="uk-width-3-10 uk-text-nowrap"><a href="scrum_board.html">ALTR-123</a></td>
-                                    <td class="uk-width-2-10 uk-text-nowrap"><span class="uk-badge uk-badge-primary">New</span></td>
-                                    <td class="uk-width-3-10">
-                                        <div class="uk-progress uk-progress-mini uk-margin-remove">
-                                            <div class="uk-progress-bar" style="width: 0;"></div>
-                                        </div>
-                                    </td>
-                                    <td class="uk-width-2-10 uk-text-right uk-text-muted uk-text-small">12.11.2015</td>
-                                </tr>
-                                <tr class="uk-table-middle">
-                                    <td class="uk-width-3-10 uk-text-nowrap"><a href="scrum_board.html">ALTR-164</a></td>
-                                    <td class="uk-width-2-10 uk-text-nowrap"><span class="uk-badge uk-badge-success">Resolved</span></td>
-                                    <td class="uk-width-3-10">
-                                        <div class="uk-progress uk-progress-mini uk-progress-primary uk-margin-remove">
-                                            <div class="uk-progress-bar" style="width: 61%;"></div>
-                                        </div>
-                                    </td>
-                                    <td class="uk-width-2-10 uk-text-right uk-text-muted uk-text-small">17.11.2015</td>
-                                </tr>
-                                <tr class="uk-table-middle">
-                                    <td class="uk-width-3-10 uk-text-nowrap"><a href="scrum_board.html">ALTR-123</a></td>
-                                    <td class="uk-width-2-10 uk-text-nowrap"><span class="uk-badge uk-badge-danger">Overdue</span></td>
-                                    <td class="uk-width-3-10">
-                                        <div class="uk-progress uk-progress-mini uk-progress-danger uk-margin-remove">
-                                            <div class="uk-progress-bar" style="width: 10%;"></div>
-                                        </div>
-                                    </td>
-                                    <td class="uk-width-2-10 uk-text-right uk-text-muted uk-text-small">12.11.2015</td>
-                                </tr>
-                                <tr class="uk-table-middle">
-                                    <td class="uk-width-3-10"><a href="scrum_board.html">ALTR-92</a></td>
-                                    <td class="uk-width-2-10"><span class="uk-badge uk-badge-success">Open</span></td>
-                                    <td class="uk-width-3-10">
-                                        <div class="uk-progress uk-progress-mini uk-margin-remove">
-                                            <div class="uk-progress-bar" style="width: 90%;"></div>
-                                        </div>
-                                    </td>
-                                    <td class="uk-width-2-10 uk-text-right uk-text-muted uk-text-small">08.11.2015</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+</div>
+<!-- //Services Block -->
+<!-- Testimonials Block -->
+<div class="block bg-1 bottom-sm">
+    <div class="container">
+        <div class="testimonials">
+            <h2 class="text-center">Our Testimonials</h2>
+            <div class="testimonials-carousel light-arrow">
+                <div class="testimonials-item">
+                    <div class="testimonials-text">I love my new heaters. I should have done this years ago. The installation was done professionally and in the time frame allotted. It was a great experience. </div>
+                    <div class="testimonials-username">Eldon C. Caron</div>
                 </div>
-            </div>
-        </div>
-        <div class="uk-width-medium-1-2">
-            <div class="md-card">
-                <div class="md-card-content">
-                    <h3 class="heading_a uk-margin-bottom">Statistics</h3>
-                    <div id="ct-chart" class="chartist"></div>
+                <div class="testimonials-item">
+                    <div class="testimonials-text">Great service. They really helped me out when my heater went out. They made the service and payment very convenient for me. I highly recommend this company.</div>
+                    <div class="testimonials-username">Paul Grant</div>
+                </div>
+                <div class="testimonials-item">
+                    <div class="testimonials-text">I love my new heaters. I should have done this years ago. The installation was done professionally and in the time frame allotted. It was a great experience. </div>
+                    <div class="testimonials-username">Eldon C. Caron</div>
+                </div>
+                <div class="testimonials-item">
+                    <div class="testimonials-text">Great service. They really helped me out when my heater went out. They made the service and payment very convenient for me. I highly recommend this company.</div>
+                    <div class="testimonials-username">Paul Grant</div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- info cards -->
-    <div class="uk-grid uk-grid-medium uk-grid-width-medium-1-2 uk-grid-width-large-1-3" data-uk-grid-margin data-uk-grid-match="{target:'.md-card-content'}">
-        <div>
-            <div class="md-card">
-                <div class="md-card-head md-bg-light-blue-600">
-                    <div class="md-card-head-menu" data-uk-dropdown="{pos:'bottom-right'}">
-                        <i class="md-icon material-icons md-icon-light">&#xE5D4;</i>
-                        <div class="uk-dropdown uk-dropdown-small">
-                            <ul class="uk-nav">
-                                <li><a href="#">User profile</a></li>
-                                <li><a href="#">User permissions</a></li>
-                                <li><a href="#" class="uk-text-danger">Delete user</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="uk-text-center">
-                        <img class="md-card-head-avatar" src="{{ asset('theme/assets/img/avatars/avatar_11.png') }}" alt=""/>
-                    </div>
-                    <h3 class="md-card-head-text uk-text-center md-color-white">
-                        Mariane Reinger                                <span>evonrueden@yahoo.com</span>
-                    </h3>
-                </div>
-                <div class="md-card-content">
-                    <ul class="md-list md-list-addon">
-                        <li>
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon material-icons">&#xE158;</i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">mann.cooper@hotmail.com</span>
-                                <span class="uk-text-small uk-text-muted">Email</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">+32(1)2290814290</span>
-                                <span class="uk-text-small uk-text-muted">Phone</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon uk-icon-facebook-official"></i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">facebook.com/envato</span>
-                                <span class="uk-text-small uk-text-muted">Facebook</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon uk-icon-twitter"></i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">twitter.com/envato</span>
-                                <span class="uk-text-small uk-text-muted">Twitter</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="md-card">
-                <div class="md-card-head">
-                    <div id="video_player"></div>
-                </div>
-                <div class="md-card-content">
-                    <ul class="md-list md-list-addon md-list-interactive" id="video_player_playlist">
-                        <li data-video-src="-CYs99M7hzA">
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon material-icons">&#xE037;</i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">Unboxing the HERO4</span>
-                                <span class="uk-text-small uk-text-muted">Mashable</span>
-                            </div>
-                        </li>
-                        <li data-video-src="te689fEo2pY">
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon material-icons">&#xE037;</i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">Apple Watch Unboxing & Setup</span>
-                                <span class="uk-text-small uk-text-muted">Unbox Therapy</span>
-                            </div>
-                        </li>
-                        <li data-video-src="7AFJeaYojhU">
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon material-icons">&#xE037;</i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">Energous WattUp Power Transmitter</span>
-                                <span class="uk-text-small uk-text-muted">TechCrunch</span>
-                            </div>
-                        </li>
-                        <li data-video-src="hajnEpCq5SE">
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon material-icons">&#xE037;</i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">The new MacBook - Design</span>
-                                <span class="uk-text-small uk-text-muted">Apple</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="md-card">
-                <div class="md-card-head head_background" style="background-image: url('theme/assets/img/gallery/Image17.jpg')">
-                    <div class="md-card-head-menu">
-                        <i class="md-icon material-icons md-icon-light">&#xE5D5;</i>
-                    </div>
-                    <h3 class="md-card-head-text">
-                        Some City
-                    </h3>
-                    <div class="md-card-head-subtext">
-                        <i class="md-card-head-icon wi wi-day-sunny-overcast uk-margin-right"></i>
-                        <span>14&deg;</span>
-                    </div>
-                </div>
-                <div class="md-card-content">
-                    <ul class="md-list md-list-addon">
-                        <li>
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon wi wi-day-sunny-overcast"></i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">22&deg; Mostly Sunny</span>
-                                <span class="uk-text-small uk-text-muted">14 Nov (Saturday)</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon wi wi-cloudy"></i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">19&deg; Partly Cloudy</span>
-                                <span class="uk-text-small uk-text-muted">15 Nov (Sunday)</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon wi wi-day-rain"></i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">16&deg; Rainy</span>
-                                <span class="uk-text-small uk-text-muted">16 Nov (Monday)</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="md-list-addon-element">
-                                <i class="md-list-addon-icon wi wi-day-sunny uk-text-warning"></i>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">24&deg; Sunny</span>
-                                <span class="uk-text-small uk-text-muted">16 Nov (Monday)</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+</div>
+<!-- //Testimonials Block -->
+<!-- Brand Block -->
+<div class="block bottom-sm">
+    <div class="container">
+        <ul class="brands-carousel">
+            <li>
+                <a href="#"><img src="{{ asset('html/images/brand-01.png') }}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{{ asset('html/images/brand-02.png') }}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{{ asset('html/images/brand-03.png') }}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{{ asset('html/images/brand-04.png') }}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{{ asset('html/images/brand-05.png') }}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{{ asset('html/images/brand-06.png') }}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{{ asset('html/images/brand-07.png') }}" alt=""></a>
+            </li>
+        </ul>
     </div>
-
-    <div class="uk-grid uk-grid-medium" data-uk-grid-margin>
-        <div class="uk-width-large-1-2">
-            <div class="md-card">
-                <div id="clndr_events" class="clndr-wrapper">
-                    <script>
-                        // calendar events
-                        clndrEvents = [
-                            { date: '2015-11-08', title: 'Doctor appointment', url: 'javascript:void(0)', timeStart: '10:00', timeEnd: '11:00' },
-                            { date: '2015-11-09', title: 'John\'s Birthday', url: 'javascript:void(0)' },
-                            { date: '2015-11-09', title: 'Party', url: 'javascript:void(0)', timeStart: '08:00', timeEnd: '08:30' },
-                            { date: '2015-11-13', title: 'Meeting', url: 'javascript:void(0)', timeStart: '18:00', timeEnd: '18:20' },
-                            { date: '2015-11-18', title: 'Work Out', url: 'javascript:void(0)', timeStart: '07:00', timeEnd: '08:00' },
-                            { date: '2015-11-18', title: 'Business Meeting', url: 'javascript:void(0)', timeStart: '11:10', timeEnd: '11:45' },
-                            { date: '2015-11-23', title: 'Meeting', url: 'javascript:void(0)', timeStart: '20:25', timeEnd: '20:50' },
-                            { date: '2015-11-26', title: 'Haircut', url: 'javascript:void(0)' },
-                            { date: '2015-11-26', title: 'Lunch with Katy', url: 'javascript:void(0)', timeStart: '08:45', timeEnd: '09:45' },
-                            { date: '2015-11-26', title: 'Concept review', url: 'javascript:void(0)', timeStart: '15:00', timeEnd: '16:00' },
-                            { date: '2015-11-27', title: 'Swimming Poll', url: 'javascript:void(0)', timeStart: '13:50', timeEnd: '14:20' },
-                            { date: '2015-11-29', title: 'Team Meeting', url: 'javascript:void(0)', timeStart: '17:25', timeEnd: '18:15' },
-                            { date: '2015-12-02', title: 'Dinner with John', url: 'javascript:void(0)', timeStart: '16:25', timeEnd: '18:45' },
-                            { date: '2015-12-13', title: 'Business Meeting', url: 'javascript:void(0)', timeStart: '10:00', timeEnd: '11:00' }
-                        ]
-                    </script>
-                    
-                </div>
-                <div class="uk-modal" id="modal_clndr_new_event">
-                    <div class="uk-modal-dialog">
-                        <div class="uk-modal-header">
-                            <h3 class="uk-modal-title">New Event</h3>
-                        </div>
-                        <div class="uk-margin-bottom">
-                            <label for="clndr_event_title_control">Event Title</label>
-                            <input type="text" class="md-input" id="clndr_event_title_control" />
-                        </div>
-                        <div class="uk-margin-medium-bottom">
-                            <label for="clndr_event_link_control">Event Link</label>
-                            <input type="text" class="md-input" id="clndr_event_link_control" />
-                        </div>
-                        <div class="uk-grid uk-grid-width-medium-1-3 uk-margin-large-bottom" data-uk-grid-margin>
-                            <div>
-                                <div class="uk-input-group">
-                                    <span class="uk-input-group-addon"><i class="uk-input-group-icon uk-icon-calendar"></i></span>
-                                    <label for="clndr_event_date_control">Event Date</label>
-                                    <input class="md-input" type="text" id="clndr_event_date_control" data-uk-datepicker="{format:'YYYY-MM-DD', addClass: 'dropdown-modal', minDate: '2015-11-13' }">
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-input-group">
-                                    <span class="uk-input-group-addon"><i class="uk-input-group-icon uk-icon-clock-o"></i></span>
-                                    <label for="clndr_event_start_control">Event Start</label>
-                                    <input class="md-input" type="text" id="clndr_event_start_control" data-uk-timepicker>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-input-group">
-                                    <span class="uk-input-group-addon"><i class="uk-input-group-icon uk-icon-clock-o"></i></span>
-                                    <label for="clndr_event_end_control">Event End</label>
-                                    <input class="md-input" type="text" id="clndr_event_end_control" data-uk-timepicker>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="uk-modal-footer uk-text-right">
-                            <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button><button type="button" class="md-btn md-btn-flat md-btn-flat-primary" id="clndr_new_event_submit">Add Event</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="uk-width-large-1-2">
-            <div class="md-card">
-                <div id="map_users_controls"></div>
-                <div id="map_users" class="gmap"></div>
-                <div class="md-card-content">
-                    <ul class="md-list md-list-addon gmap_list" id="map_users_list">
-                        <li data-gmap-lat="37.406267"  data-gmap-lon="-122.06742" data-gmap-user="Ericka Rogahn I" data-gmap-user-company="Dietrich Ltd">
-                            <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_01_tn.png') }}" alt=""/>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">Ericka Rogahn I</span>
-                                <span class="uk-text-small uk-text-muted">Dietrich Ltd</span>
-                            </div>
-                        </li>
-                        <li data-gmap-lat="37.379267"  data-gmap-lon="-122.02148" data-gmap-user="Reginald Huels" data-gmap-user-company="Denesik Inc">
-                            <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_02_tn.png') }}" alt=""/>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">Reginald Huels</span>
-                                <span class="uk-text-small uk-text-muted">Denesik Inc</span>
-                            </div>
-                        </li>
-                        <li data-gmap-lat="37.410267"  data-gmap-lon="-122.11048" data-gmap-user="Anne Mann" data-gmap-user-company="Little, Rutherford and Bartoletti">
-                            <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_03_tn.png') }}" alt=""/>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">Anne Mann</span>
-                                <span class="uk-text-small uk-text-muted">Little, Rutherford and Bartoletti</span>
-                            </div>
-                        </li>
-                        <li data-gmap-lat="37.397267"  data-gmap-lon="-122.084417" data-gmap-user="Dr. Jimmie Schaefer" data-gmap-user-company="Shanahan Inc">
-                            <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_04_tn.png') }}" alt=""/>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">Dr. Jimmie Schaefer</span>
-                                <span class="uk-text-small uk-text-muted">Shanahan Inc</span>
-                            </div>
-                        </li>
-                        <li data-gmap-lat="37.372267"  data-gmap-lon="-122.090417" data-gmap-user="Elisabeth Weissnat" data-gmap-user-company="Mosciski, Lesch and Cassin">
-                            <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_05_tn.png') }}" alt=""/>
-                            </div>
-                            <div class="md-list-content">
-                                <span class="md-list-heading">Elisabeth Weissnat</span>
-                                <span class="uk-text-small uk-text-muted">Mosciski, Lesch and Cassin</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
+</div>
+<!-- //Brand Block -->
 @endsection
 
 @section('js')
-
-    <!-- page specific plugins -->
-    <!-- d3 -->
-    <script src="{{ asset('theme/bower_components/d3/d3.min.js') }}"></script>
-    <!-- metrics graphics (charts) -->
-    <script src="{{ asset('theme/bower_components/metrics-graphics/dist/metricsgraphics.min.js') }}"></script>
-    <!-- chartist (charts) -->
-    <script src="{{ asset('theme/bower_components/chartist/dist/chartist.min.js') }}"></script>
-    <!-- maplace (google maps) -->
-    <script src="http://maps.google.com/maps/api/js?sensor=true'"></script>
-    <script src="{{ asset('theme/bower_components/maplace.js/src/maplace-0.1.3.js') }}"></script>
-    <!-- peity (small charts) -->
-    <script src="{{ asset('theme/bower_components/peity/jquery.peity.min.js') }}"></script>
-    <!-- easy-pie-chart (circular statistics) -->
-    <script src="{{ asset('theme/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
-    <!-- countUp -->
-    <script src="{{ asset('theme/bower_components/countUp.js/countUp.min.js') }}"></script>
-    <!-- handlebars.js -->
-    <script src="{{ asset('theme/bower_components/handlebars/handlebars.min.js') }}"></script>
-    <script src="{{ asset('theme/assets/js/custom/handlebars_helpers.min.js') }}"></script>
-    <!-- CLNDR -->
-    <script src="{{ asset('theme/bower_components/clndr/src/clndr.js') }}"></script>
-    <!-- fitvids -->
-    <script src="{{ asset('theme/bower_components/fitvids/jquery.fitvids.js') }}"></script>
-
-    <!--  dashbord functions -->
-    <script src="{{ asset('theme/assets/js/pages/dashboard.min.js') }}"></script>
-
-    <script>
-        $(function() {
-            // enable hires images
-            altair_helpers.retina_images();
-            // fastClick (touch devices)
-            if(Modernizr.touch) {
-                FastClick.attach(document.body);
-            }
-        });
-    </script>
-
-    <script>
-        $(function() {
-            var $switcher = $('#style_switcher'),
-                $switcher_toggle = $('#style_switcher_toggle'),
-                $theme_switcher = $('#theme_switcher'),
-                $mini_sidebar_toggle = $('#style_sidebar_mini'),
-                $boxed_layout_toggle = $('#style_layout_boxed'),
-                $body = $('body');
-
-
-            $switcher_toggle.click(function(e) {
-                e.preventDefault();
-                $switcher.toggleClass('switcher_active');
-            });
-
-            $theme_switcher.children('li').click(function(e) {
-                e.preventDefault();
-                var $this = $(this),
-                    this_theme = $this.attr('data-app-theme');
-
-                $theme_switcher.children('li').removeClass('active_theme');
-                $(this).addClass('active_theme');
-                $body
-                    .removeClass('app_theme_a app_theme_b app_theme_c app_theme_d app_theme_e app_theme_f app_theme_g')
-                    .addClass(this_theme);
-
-                if(this_theme == '') {
-                    localStorage.removeItem('altair_theme');
-                } else {
-                    localStorage.setItem("altair_theme", this_theme);
-                }
-
-            });
-
-            // hide style switcher
-            $document.on('click keyup', function(e) {
-                if( $switcher.hasClass('switcher_active') ) {
-                    if (
-                        ( !$(e.target).closest($switcher).length )
-                        || ( e.keyCode == 27 )
-                    ) {
-                        $switcher.removeClass('switcher_active');
-                    }
-                }
-            });
-
-            // get theme from local storage
-            if(localStorage.getItem("altair_theme") !== null) {
-                $theme_switcher.children('li[data-app-theme='+localStorage.getItem("altair_theme")+']').click();
-            }
-
-
-        // toggle mini sidebar
-
-            // change input's state to checked if mini sidebar is active
-            if((localStorage.getItem("altair_sidebar_mini") !== null && localStorage.getItem("altair_sidebar_mini") == '1') || $body.hasClass('sidebar_mini')) {
-                $mini_sidebar_toggle.iCheck('check');
-            }
-
-            $mini_sidebar_toggle
-                .on('ifChecked', function(event){
-                    $switcher.removeClass('switcher_active');
-                    localStorage.setItem("altair_sidebar_mini", '1');
-                    location.reload(true);
-                })
-                .on('ifUnchecked', function(event){
-                    $switcher.removeClass('switcher_active');
-                    localStorage.removeItem('altair_sidebar_mini');
-                    location.reload(true);
-                });
-
-
-        // toggle boxed layout
-
-            // change input's state to checked if mini sidebar is active
-            if((localStorage.getItem("altair_layout") !== null && localStorage.getItem("altair_layout") == 'boxed') || $body.hasClass('boxed_layout')) {
-                $boxed_layout_toggle.iCheck('check');
-                $body.addClass('boxed_layout');
-                $(window).resize();
-            }
-
-            // toggle mini sidebar
-            $boxed_layout_toggle
-                .on('ifChecked', function(event){
-                    $switcher.removeClass('switcher_active');
-                    localStorage.setItem("altair_layout", 'boxed');
-                    location.reload(true);
-                })
-                .on('ifUnchecked', function(event){
-                    $switcher.removeClass('switcher_active');
-                    localStorage.removeItem('altair_layout');
-                    location.reload(true);
-                });
-
-
-        });
-    </script>
     
 @endsection

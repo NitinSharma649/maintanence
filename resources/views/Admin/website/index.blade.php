@@ -1,13 +1,13 @@
-@extends('layouts.main')
+@extends('Admin.layouts.main')
 
 @section('css')
     <!-- additional styles for plugins -->
     <!-- weather icons -->
-    <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css" media="all">
+    <link rel="stylesheet" href="{{ asset('theme/bower_components/weather-icons/css/weather-icons.min.css') }}" media="all">
     <!-- metrics graphics (charts) -->
-    <link rel="stylesheet" href="bower_components/metrics-graphics/dist/metricsgraphics.css">
+    <link rel="stylesheet" href="{{ asset('theme/bower_components/metrics-graphics/dist/metricsgraphics.css') }}">
     <!-- chartist -->
-    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="{{ asset('theme/bower_components/chartist/dist/chartist.min.css') }}">
 
 
 @endsection
@@ -54,96 +54,6 @@
         </div>
     </div>
 
-    <!-- large chart -->
-    <div class="uk-grid">
-        <div class="uk-width-1-1">
-            <div class="md-card">
-                <div class="md-card-toolbar">
-                    <div class="md-card-toolbar-actions">
-                        <i class="md-icon material-icons md-card-fullscreen-activate">&#xE5D0;</i>
-                        <i class="md-icon material-icons">&#xE5D5;</i>
-                        <div class="md-card-dropdown" data-uk-dropdown="{pos:'bottom-right'}">
-                            <i class="md-icon material-icons">&#xE5D4;</i>
-                            <div class="uk-dropdown uk-dropdown-small">
-                                <ul class="uk-nav">
-                                    <li><a href="#">Action 1</a></li>
-                                    <li><a href="#">Action 2</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="md-card-toolbar-heading-text">
-                        Chart
-                    </h3>
-                </div>
-                <div class="md-card-content">
-                    <div class="mGraph-wrapper">
-                        <div id="mGraph_sale" class="mGraph"></div>
-                    </div>
-                    <div class="md-card-fullscreen-content">
-                        <div class="uk-overflow-container">
-                            <table class="uk-table uk-table-no-border uk-text-nowrap">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Best Seller</th>
-                                    <th>Total Sale</th>
-                                    <th>Change</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>January 2014</td>
-                                    <td>Voluptatem dolore voluptatem sit.</td>
-                                    <td>$3 234 162</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>February 2014</td>
-                                    <td>Voluptatem et debitis.</td>
-                                    <td>$3 771 083</td>
-                                    <td class="uk-text-success">+2.5%</td>
-                                </tr>
-                                <tr>
-                                    <td>March 2014</td>
-                                    <td>Animi distinctio error.</td>
-                                    <td>$2 429 352</td>
-                                    <td class="uk-text-danger">-4.6%</td>
-                                </tr>
-                                <tr>
-                                    <td>April 2014</td>
-                                    <td>Blanditiis atque nam deleniti.</td>
-                                    <td>$4 844 169</td>
-                                    <td class="uk-text-success">+7%</td>
-                                </tr>
-                                <tr>
-                                    <td>May 2014</td>
-                                    <td>Sed modi dolorem.</td>
-                                    <td>$5 284 318</td>
-                                    <td class="uk-text-success">+3.2%</td>
-                                </tr>
-                                <tr>
-                                    <td>June 2014</td>
-                                    <td>Dolorem quis fugit.</td>
-                                    <td>$4 688 183</td>
-                                    <td class="uk-text-danger">-6%</td>
-                                </tr>
-                                <tr>
-                                    <td>July 2014</td>
-                                    <td>Enim sapiente debitis a.</td>
-                                    <td>$4 353 427</td>
-                                    <td class="uk-text-success">-5.3%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </div>
-                        <p class="uk-margin-large-top uk-margin-small-bottom heading_list uk-text-success">Some Info:</p>
-                        <p class="uk-margin-top-remove">Numquam et aperiam aut est sed quis aliquid accusantium fugit voluptatibus quasi numquam explicabo in amet laborum ea dolores vel aut et impedit voluptatem maiores laborum facilis iusto non sit accusamus dolores dicta illo quia doloremque magnam odit debitis nemo incidunt praesentium facilis dolore inventore quia suscipit dolorem ea est natus ullam ea aspernatur tempore et accusantium voluptates consequuntur optio et ipsam ratione quisquam ut repellendus magni sint doloribus praesentium nemo repudiandae esse rerum non dignissimos saepe qui est quia quaerat ut ipsam alias cupiditate qui voluptatem cum commodi enim assumenda accusamus et quis nostrum praesentium laboriosam et nostrum quam dolorem ipsam culpa repudiandae voluptas delectus asperiores fugiat est quae voluptatibus a qui et provident laborum quis fugiat aut veritatis cumque ut rerum laudantium quod at omnis harum.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- circular charts -->
     <div class="uk-grid uk-grid-width-small-1-2 uk-grid-width-large-1-3 uk-grid-width-xlarge-1-5 uk-text-center uk-sortable sortable-handler" id="dashboard_sortable_cards" data-uk-sortable data-uk-grid-margin>
@@ -346,7 +256,7 @@
                         </div>
                     </div>
                     <div class="uk-text-center">
-                        <img class="md-card-head-avatar" src="assets/img/avatars/avatar_11.png" alt=""/>
+                        <img class="md-card-head-avatar" src="{{ asset('theme/assets/img/avatars/avatar_11.png') }}" alt=""/>
                     </div>
                     <h3 class="md-card-head-text uk-text-center md-color-white">
                         Mariane Reinger                                <span>evonrueden@yahoo.com</span>
@@ -443,7 +353,7 @@
         </div>
         <div>
             <div class="md-card">
-                <div class="md-card-head head_background" style="background-image: url('assets/img/gallery/Image17.jpg')">
+                <div class="md-card-head head_background" style="background-image: url('theme/assets/img/gallery/Image17.jpg')">
                     <div class="md-card-head-menu">
                         <i class="md-icon material-icons md-icon-light">&#xE5D5;</i>
                     </div>
@@ -522,51 +432,7 @@
                             { date: '2015-12-13', title: 'Business Meeting', url: 'javascript:void(0)', timeStart: '10:00', timeEnd: '11:00' }
                         ]
                     </script>
-                    <script id="clndr_events_template" type="text/x-handlebars-template">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <i class="md-icon clndr_add_event material-icons">&#xE145;</i>
-                                <i class="md-icon clndr_today material-icons">&#xE8DF;</i>
-                                <i class="md-icon clndr_previous material-icons">&#xE408;</i>
-                                <i class="md-icon clndr_next material-icons uk-margin-remove">&#xE409;</i>
-                            </div>
-                            <h3 class="md-card-toolbar-heading-text">
-                                {{ month }} {{ year }}
-                            </h3>
-                        </div>
-                        <div class="clndr_days">
-                            <div class="clndr_days_names">
-                                {{#each daysOfTheWeek}}
-                                <div class="day-header">{{ this }}</div>
-                                {{/each}}
-                            </div>
-                            <div class="clndr_days_grid">
-                                {{#each days}}
-                                <div class="{{ this.classes }}" {{#if this.id }} id="{{ this.id }}" {{/if}}>
-                                    <span>{{ this.day }}</span>
-                                </div>
-                                {{/each}}
-                            </div>
-                        </div>
-                        <div class="clndr_events">
-                            <i class="material-icons clndr_events_close_button">&#xE5CD;</i>
-                            {{#each eventsThisMonth}}
-                            <div class="clndr_event" data-clndr-event="{{ dateFormat this.date format='YYYY-MM-DD' }}">
-                                <a href="{{ this.url }}">
-                                    <span class="clndr_event_title">{{ this.title }}</span>
-                                    <span class="clndr_event_more_info">
-                                        {{~dateFormat this.date format='MMM Do'}}
-                                        {{~#ifCond this.timeStart '||' this.timeEnd}} ({{/ifCond}}
-                                        {{~#if this.timeStart }} {{~this.timeStart~}} {{/if}}
-                                        {{~#ifCond this.timeStart '&&' this.timeEnd}} - {{/ifCond}}
-                                        {{~#if this.timeEnd }} {{~this.timeEnd~}} {{/if}}
-                                        {{~#ifCond this.timeStart '||' this.timeEnd}}){{/ifCond~}}
-                                    </span>
-                                </a>
-                            </div>
-                            {{/each}}
-                        </div>
-                    </script>
+                    
                 </div>
                 <div class="uk-modal" id="modal_clndr_new_event">
                     <div class="uk-modal-dialog">
@@ -619,7 +485,7 @@
                     <ul class="md-list md-list-addon gmap_list" id="map_users_list">
                         <li data-gmap-lat="37.406267"  data-gmap-lon="-122.06742" data-gmap-user="Ericka Rogahn I" data-gmap-user-company="Dietrich Ltd">
                             <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="assets/img/avatars/avatar_01_tn.png" alt=""/>
+                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_01_tn.png') }}" alt=""/>
                             </div>
                             <div class="md-list-content">
                                 <span class="md-list-heading">Ericka Rogahn I</span>
@@ -628,7 +494,7 @@
                         </li>
                         <li data-gmap-lat="37.379267"  data-gmap-lon="-122.02148" data-gmap-user="Reginald Huels" data-gmap-user-company="Denesik Inc">
                             <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="assets/img/avatars/avatar_02_tn.png" alt=""/>
+                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_02_tn.png') }}" alt=""/>
                             </div>
                             <div class="md-list-content">
                                 <span class="md-list-heading">Reginald Huels</span>
@@ -637,7 +503,7 @@
                         </li>
                         <li data-gmap-lat="37.410267"  data-gmap-lon="-122.11048" data-gmap-user="Anne Mann" data-gmap-user-company="Little, Rutherford and Bartoletti">
                             <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="assets/img/avatars/avatar_03_tn.png" alt=""/>
+                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_03_tn.png') }}" alt=""/>
                             </div>
                             <div class="md-list-content">
                                 <span class="md-list-heading">Anne Mann</span>
@@ -646,7 +512,7 @@
                         </li>
                         <li data-gmap-lat="37.397267"  data-gmap-lon="-122.084417" data-gmap-user="Dr. Jimmie Schaefer" data-gmap-user-company="Shanahan Inc">
                             <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="assets/img/avatars/avatar_04_tn.png" alt=""/>
+                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_04_tn.png') }}" alt=""/>
                             </div>
                             <div class="md-list-content">
                                 <span class="md-list-heading">Dr. Jimmie Schaefer</span>
@@ -655,7 +521,7 @@
                         </li>
                         <li data-gmap-lat="37.372267"  data-gmap-lon="-122.090417" data-gmap-user="Elisabeth Weissnat" data-gmap-user-company="Mosciski, Lesch and Cassin">
                             <div class="md-list-addon-element">
-                                <img class="md-user-image md-list-addon-avatar" src="assets/img/avatars/avatar_05_tn.png" alt=""/>
+                                <img class="md-user-image md-list-addon-avatar" src="{{ asset('theme/assets/img/avatars/avatar_05_tn.png') }}" alt=""/>
                             </div>
                             <div class="md-list-content">
                                 <span class="md-list-heading">Elisabeth Weissnat</span>
@@ -674,30 +540,30 @@
 
     <!-- page specific plugins -->
     <!-- d3 -->
-    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="{{ asset('theme/bower_components/d3/d3.min.js') }}"></script>
     <!-- metrics graphics (charts) -->
-    <script src="bower_components/metrics-graphics/dist/metricsgraphics.min.js"></script>
+    <script src="{{ asset('theme/bower_components/metrics-graphics/dist/metricsgraphics.min.js') }}"></script>
     <!-- chartist (charts) -->
-    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="{{ asset('theme/bower_components/chartist/dist/chartist.min.js') }}"></script>
     <!-- maplace (google maps) -->
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script src="bower_components/maplace.js/src/maplace-0.1.3.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true'"></script>
+    <script src="{{ asset('theme/bower_components/maplace.js/src/maplace-0.1.3.js') }}"></script>
     <!-- peity (small charts) -->
-    <script src="bower_components/peity/jquery.peity.min.js"></script>
+    <script src="{{ asset('theme/bower_components/peity/jquery.peity.min.js') }}"></script>
     <!-- easy-pie-chart (circular statistics) -->
-    <script src="bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <script src="{{ asset('theme/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
     <!-- countUp -->
-    <script src="bower_components/countUp.js/countUp.min.js"></script>
+    <script src="{{ asset('theme/bower_components/countUp.js/countUp.min.js') }}"></script>
     <!-- handlebars.js -->
-    <script src="bower_components/handlebars/handlebars.min.js"></script>
-    <script src="assets/js/custom/handlebars_helpers.min.js"></script>
+    <script src="{{ asset('theme/bower_components/handlebars/handlebars.min.js') }}"></script>
+    <script src="{{ asset('theme/assets/js/custom/handlebars_helpers.min.js') }}"></script>
     <!-- CLNDR -->
-    <script src="bower_components/clndr/src/clndr.js"></script>
+    <script src="{{ asset('theme/bower_components/clndr/src/clndr.js') }}"></script>
     <!-- fitvids -->
-    <script src="bower_components/fitvids/jquery.fitvids.js"></script>
+    <script src="{{ asset('theme/bower_components/fitvids/jquery.fitvids.js') }}"></script>
 
     <!--  dashbord functions -->
-    <script src="assets/js/pages/dashboard.min.js"></script>
+    <script src="{{ asset('theme/assets/js/pages/dashboard.min.js') }}"></script>
 
     <script>
         $(function() {

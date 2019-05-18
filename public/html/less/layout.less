@@ -1,0 +1,78 @@
+body,
+html {
+	overflow-x: hidden;
+}
+
+.block {
+	margin-bottom: @block-bottom-space;
+}
+
+.block.bottom-sm {
+	margin-bottom: @block-bottom-space - 15px;
+}
+
+.block.bottom-null {
+	margin-bottom: 0;
+}
+
+.block.bg-1 {
+	background: url(../images/block-bg.jpg) no-repeat fixed center center;
+	background-size: cover;
+	padding: 60px 0 57px;
+	color: #fff;
+	h1,
+	h2,
+	h3 {
+		color: #fff;
+	}
+	.slick-dots li button:after {
+		background: #fff;
+	}
+	.slick-dots li.slick-active button:after,
+	.slick-dots li.slick-active button:hover:after {
+		background: @custom-color-alt;
+	}
+}
+
+.block.bg-dark {
+	background: @custom-color;
+	color: #fff;
+	h1,
+	h2,
+	h3,
+	p,
+	.font24,
+	.font20 {
+		color: #fff;
+	}
+	p,
+	.font24,
+	.font20 {
+		margin-bottom: 30px;
+	}
+}
+
+.block.pad-sm {
+	padding: 50px 0 30px;
+}
+
+.block-negative {
+	position: relative;
+	margin-top: -46px;
+	z-index: 100;
+}
+
+@media (max-width: 767px) {
+	.block {
+		margin-bottom: @block-bottom-space/2;
+	}
+	.block-negative {
+		margin-top: 16px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1200px;
+	}
+}

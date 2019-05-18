@@ -1,28 +1,8 @@
-<!-- google web fonts -->
-<script>
-    WebFontConfig = {
-        google: {
-            families: [
-                'Source+Code+Pro:400,700:latin',
-                'Roboto:400,300,500,700,400italic:latin'
-            ]
-        }
-    };
-    (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-    })();
-</script>
-
-<!-- common functions -->
-<script src="{{ asset('theme/assets/js/common.min.js') }}"></script>
-<!-- uikit functions -->
-<script src="{{ asset('theme/assets/js/uikit_custom.min.js') }}"></script>
-<!-- altair common functions/helpers -->
-<script src="{{ asset('theme/assets/js/altair_admin_common.min.js') }}"></script>
-
+<script src="{{ asset('html/js/jquery.js') }}"></script>
+<script src="{{ asset('html/js/plugins/bootstrap.min.js') }}"></script>
+<script src="{{ asset('html/js/plugins/jquery.nivo.slider.js') }}"></script>
+<script src="{{ asset('html/js/plugins/slick.min.js') }}"></script>
+<script src="{{ asset('html/js/plugins/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('html/js/plugins/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ asset('html/js/plugins/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('html/js/custom.js') }}"></script>
