@@ -35,9 +35,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapAdminRoutes();
+        $this->mapPanelRoutes();
 
-        $this->mapVendorRoutes();
+        // $this->mapVendorRoutes();
 
         $this->mapApiRoutes();
 
@@ -53,15 +53,15 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapAdminRoutes()
+    protected function mapPanelRoutes()
     {
         Route::group([
-            'middleware' => ['web', 'admin'],
-            'prefix' => 'admin',
-            'as' => 'admin.',
+            'middleware' => ['web', 'panel'],
+            'prefix' => 'panel',
+            'as' => 'panel.',
             'namespace' => $this->namespace,
         ], function ($router) {
-            require base_path('routes/admin.php');
+            require base_path('routes/panel.php');
         });
     }
     /**
@@ -71,17 +71,17 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapVendorRoutes()
-    {
-        Route::group([
-            'middleware' => ['web', 'vendor'],
-            'prefix' => 'vendor',
-            'as' => 'vendor.',
-            'namespace' => $this->namespace,
-        ], function ($router) {
-            require base_path('routes/vendor.php');
-        });
-    }
+    // protected function mapVendorRoutes()
+    // {
+    //     Route::group([
+    //         'middleware' => ['web', 'vendor'],
+    //         'prefix' => 'vendor',
+    //         'as' => 'vendor.',
+    //         'namespace' => $this->namespace,
+    //     ], function ($router) {
+    //         require base_path('routes/vendor.php');
+    //     });
+    // }
 
     /**
      * Define the "web" routes for the application.

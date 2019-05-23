@@ -11,18 +11,17 @@
 |
 */
 
-Auth::routes();
-
-//Admin routes starts
-Route::group(['namespace' => 'Admin', 'prefix'=> 'admin', 'as'=>'admin.'], function () {
+//Panel routes starts
+Route::group(['namespace' => 'Panel', 'prefix'=> 'panel', 'as'=>'panel.'], function () {
     Auth::routes();
-});//routes are not have admin middleware
+});//routes are not have panel middleware
 
 //Vendor routes starts
-Route::group(['namespace' => 'Vendor', 'prefix'=> 'vendor', 'as'=>'vendor.'], function () {
-    Auth::routes();
-});//routes are not have vendor middleware
+// Route::group(['namespace' => 'Vendor', 'prefix'=> 'vendor', 'as'=>'vendor.'], function () {
+//     Auth::routes();
+// });//routes are not have vendor middleware
 
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
