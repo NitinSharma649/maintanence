@@ -19,6 +19,8 @@
     <!--  tablesorter functions -->
     <script src="{{ asset('theme/assets/js/pages/plugins_tablesorter.min.js') }}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <!-- google web fonts -->
     <script>
         WebFontConfig = {
@@ -203,3 +205,20 @@
 
         });
     </script>
+    @if (session('success'))
+    <script type="text/javascript">
+        toastr.success("{{ session('success') }}", 'Success');
+    </script>
+    @php
+        session()->forget('success');
+    @endphp
+    @endif
+
+    @if (session('error'))
+    <script type="text/javascript">
+        toastr.error("{{ session('error') }}", 'Error');
+    </script>
+    @php
+        session()->forget('error');
+    @endphp
+    @endif

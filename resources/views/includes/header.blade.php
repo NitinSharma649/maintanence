@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="phone">
-                                <div class="number"><i class="icon icon-telephone"></i><span>1 (800) 765-43-21</span></div>
+                                <div class="number"><i class="icon icon-telephone"></i><span>9876543210</span></div>
                                 <div class="under-number">Call us now. Resistance is futile!</div>
                             </div>
                         </div>
@@ -64,6 +64,7 @@
                                 </ul>
                             </li>
                             <li><a href="#">Residential</a></li>
+                            <li><a href="{{ route('maintenance.index') }}">Maintenance</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ route('prices') }}"><span class="electric-btn"><span class="text">Prices</span></span></a>

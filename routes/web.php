@@ -36,4 +36,7 @@ Route::group(['namespace' => 'Website'], function(){
     Route::view('/faq', 'website.faq')->name('faq');
     Route::view('/contact', 'website.contact')->name('contact');
     Route::view('/gallery', 'website.gallery')->name('gallery');
+    
+    Route::get('/maintenance', 'MaintenanceController@index')->name('maintenance.index');
+    Route::post('/maintenance', "MaintenanceController@store")->name('maintenance.store');
 });

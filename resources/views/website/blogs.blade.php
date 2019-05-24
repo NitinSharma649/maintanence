@@ -26,7 +26,7 @@
 		<div class="blog-isotope" id="blogGallery">
 			<div class="blog-post">
 				<div class="post-image">
-					<a href="blog-single.html"><img src="{{ asset('html/images/blog/blog-post-img-card-1.jpg') }}" alt=""></a>
+					<a href="{{ route('blogs.show', rand(1,50)) }}"><img src="{{ asset('html/images/blog/blog-post-img-card-1.jpg') }}" alt=""></a>
 				</div>
 				<div class="post-content">
 					<div class="post-author">by Adam Smith</div>
@@ -58,7 +58,7 @@
 			<div class="blog-post">
 
 				<div class="post-image">
-					<a href="blog-single.html"><img src="{{ asset('html/images/blog/blog-post-img-card-4.jpg') }}" alt="">
+					<a href="{{ route('blogs.show', rand(1,50)) }}"><img src="{{ asset('html/images/blog/blog-post-img-card-4.jpg') }}" alt="">
 						<div class="post-quote">
 							<div class="vert-wrap">
 								<div class="vert">
@@ -102,7 +102,7 @@
 
 			<div class="blog-post">
 				<div class="post-image">
-					<a href="blog-single.html"><img src="{{ asset('html/images/blog/blog-post-img-card-3.jpg') }}" alt=""></a>
+					<a href="{{ route('blogs.show', rand(1,50)) }}"><img src="{{ asset('html/images/blog/blog-post-img-card-3.jpg') }}" alt=""></a>
 					<div class="post-link-wrapper">
 						<div class="vert-wrap">
 							<div class="vert">

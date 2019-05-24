@@ -175,7 +175,17 @@
                             <ul class="uk-nav js-uk-prevent">
                                 <li><a href="page_user_profile.html">My profile</a></li>
                                 <li><a href="page_settings.html">Settings</a></li>
-                                <li><a href="login.html">Logout</a></li>
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('panel.logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
                             </ul>
                         </div>
                     </li>

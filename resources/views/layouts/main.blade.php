@@ -4,7 +4,9 @@
         @include('includes.meta')
         @yield('meta')
         <link rel="icon" href="favicon.ico">
-        <title>Electrician - HTML 5 TEMPLATE</title>
+        <title>@yield('title', "Maintenance")</title>
+        <link rel="icon" type="image/png" href="{{ asset('theme/assets/img/favicon-16x16.png') }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ asset('theme/assets/img/favicon-32x32.png') }}" sizes="32x32">
         @include('includes.css')
         @yield('css')
     </head>
