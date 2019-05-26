@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Role;
 use App\User;
+use Session;
 
 class EmployeeController extends BaseController
 {
@@ -14,7 +15,7 @@ class EmployeeController extends BaseController
     }
 
     public function index(){
-        $employees = User::where('role_id', 2)->get();
+        $employees = User::where('role_id', 2)->orderBy('id','desc')->get();
         return view('panel.website.employee.index', compact('employees'));
     }
 
@@ -24,22 +25,31 @@ class EmployeeController extends BaseController
     }
 
     public function store(Request $request){
+        $employee = new User($request->all());
+        $employee->password =  \bcrypt($request->password);
+        $employee->save();
         return redirect()->route('panel.employee.index')->with('success', "Employee Added Successfully");
     }
 
-    public function show($employee){
+    public function show(User $employee){
         return redirect()->route('panel.employee.show');
     }
 
-    public function edit($employee){
-        return view('panel.website.employee.edit-create');
+    public function edit(User $employee){
+        dd($employee);
+        return view('panel.website.employee.edit-create', ['user'=>$employee]);
     }
     
-    public function update(Request $request, $employee){
+    public function update(Request $request, User $employee){
+        $employee->update($request->all());
         return redirect()->route('panel.employee.index')->with('success', "Employee Updated Successfully");
     }
 
-    public function destroy(Request $request, $employee){
-        return redirect()->route('panel.employee.index')->with('success', "Employee Deleted Successfully");
+    public function destroy(Request $request, User $employee){
+        if($employee->delete()){
+            return redirect()->route('panel.employee.index')->with('success', "Employee Deleted Successfully");
+        }else{
+            return redirect()->back()->with('error', "Something went wrong");
+        }
     }
 }

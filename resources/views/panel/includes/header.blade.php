@@ -173,7 +173,7 @@
                         <a href="#" class="user_action_image"><img class="md-user-image" src="{{ asset('theme/assets/img/avatars/avatar_11_tn.png') }}" alt=""/></a>
                         <div class="uk-dropdown uk-dropdown-small">
                             <ul class="uk-nav js-uk-prevent">
-                                <li><a href="page_user_profile.html">My profile</a></li>
+                                <li><a href="{{ route('panel.profile.index') }}">My profile</a></li>
                                 <li><a href="page_settings.html">Settings</a></li>
                                 <li>
                                     <a href="{{ route('logout') }}"

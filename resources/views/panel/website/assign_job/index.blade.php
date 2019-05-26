@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach($employees as $employee)
                     <tr>
-                        <td><input type="checkbox" data-md-icheck class="ts_checkbox"></td>
+                        <td><input type="checkbox" data-md-icheck class="ts_checkbox AssignTo" name="assignTo[]" value="{{ $employee->id }}"></td>
                         <td>{{ $employee->name }}</td>
                         <td>{{ $employee->email }}</td>
                         <td>{{ $employee->role->role }}</td>
@@ -70,8 +70,39 @@
         </ul>
     </div>
 </div>
+<div class="md-fab-wrapper">
+    <form action="{{ route('panel.assign_job.store') }}" method="post">
+        @csrf
+        <input type="hidden" name="complaint_id" value="{{ $maintenance->id }}">
+        <input type="hidden" name="warranty_number" value="{{ $maintenance->warranty_number }}">
+        <input type="hidden" name="employee_id" id="AssignToEmployee">
+        <button class="md-fab md-fab-accent AssignBtn" title="Assign" href="" data-uk-modal="{center:true}">
+            <i class="material-icons">&#xE150;</i>
+        </button>
+    </form>
+</div>
+
 @endsection
 
 @section('js')
+    <script>
+        $(document).ready(function(){
+            $(document).on('click', '.AssignBtn', function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                if($('input.AssignTo:checked').length>0){
+                    var values = new Array();
+                    $.each($(`input[name="assignTo[]"]:checked`), function() {
+                        values.push($(this).val());
+                    });
+                    $('#AssignToEmployee').val(values);
+                    
+                    $(this).parents('form').submit();
+                }else{
+                    toastr.info('Please select atlease 1 engineer');
+                }
+            });
+        });
+    </script>
 
 @endsection

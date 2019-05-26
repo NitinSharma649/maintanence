@@ -5,8 +5,11 @@
 @endsection
 
 @section('content')
-<form action="{{ route('panel.employee.store') }}" method="POST" class="uk-form-stacked" id="user_edit_form">
+<form action="{{ empty($user) ? route('panel.profile.store') : route('panel.profile.update', $user) }}" method="POST" class="uk-form-stacked" id="user_edit_form">
     @csrf
+    @if(!empty($user))
+    @method('put')
+    @endif
     <div class="uk-grid" data-uk-grid-margin>
         <div class="uk-width-large-7-10">
             <div class="md-card">
@@ -112,13 +115,14 @@
                                                     <input type="text" class="md-input" name="user_edit_phone" value="{{ empty($user) ? '' : $user->phone }}" />
                                                 </div>
                                             </div>
+                                            
                                             <div>
                                                 <div class="uk-input-group">
                                                     <span class="uk-input-group-addon">
                                                         <i class="md-list-addon-icon uk-icon-facebook-official"></i>
                                                     </span>
                                                     <label>Facebook</label>
-                                                    <input type="text" class="md-input" name="social[facebook]" value="{{ empty($user) ? '' : $user->social->facebook  }}" />
+                                                    <input type="text" class="md-input" name="social[facebook]" value="{{ empty($user) ? '' : empty($user->social) ? '' : $user->social['facebook'] }}" />
                                                 </div>
                                             </div>
                                             <div>
@@ -127,7 +131,7 @@
                                                         <i class="md-list-addon-icon uk-icon-twitter"></i>
                                                     </span>
                                                     <label>Twitter</label>
-                                                    <input type="text" class="md-input" name="social[twitter]" value="{{ empty($user) ? '' : $user->social->twitter }}" />
+                                                    <input type="text" class="md-input" name="social[twitter]" value="{{ empty($user) ? '' : empty($user->social) ? '' : $user->social['twitter'] }}" />
                                                 </div>
                                             </div>
                                             <div>
@@ -136,7 +140,7 @@
                                                         <i class="md-list-addon-icon uk-icon-linkedin"></i>
                                                     </span>
                                                     <label>Linkdin</label>
-                                                    <input type="text" class="md-input" name="social[linkedin]" value="{{ empty($user) ? '' : $user->social->linkedin  }}" />
+                                                    <input type="text" class="md-input" name="social[linkedin]" value="{{ empty($user) ? '' : empty($user->social) ? '' : $user->social['linkedin'] }}" />
                                                 </div>
                                             </div>
                                             <div>
@@ -145,7 +149,7 @@
                                                         <i class="md-list-addon-icon uk-icon-google-plus"></i>
                                                     </span>
                                                     <label>Google+</label>
-                                                    <input type="text" class="md-input" name="social[google]" value="{{ empty($user) ? '' : $user->social->google }}" />
+                                                    <input type="text" class="md-input" name="social[google]" value="{{ empty($user) ? '' : empty($user->social) ? '' : $user->social['google'] }}" />
                                                 </div>
                                             </div>
                                         </div>
@@ -488,16 +492,14 @@
                 <div class="md-card-content">
                     <h3 class="heading_c uk-margin-medium-bottom">Other settings</h3>
                     <div class="uk-form-row">
-                        <input type="checkbox" checked data-switchery id="user_edit_active" name="isActive"/>
+                        <input type="checkbox" checked data-switchery id="user_edit_active" name="isActive" disabled/>
                         <label for="user_edit_active" class="inline-label">User Active</label>
                     </div>
                     <hr class="md-hr">
                     <div class="uk-form-row">
                         <label class="uk-form-label" for="user_edit_role">User Role</label>
                         <select data-md-selectize name="role_id">
-                            @foreach ($roles as $role)
-                            <option value="{{ $role->id }}">{{ $role->display_name }}</option>
-                            @endforeach
+                            <option value="{{ $user->role->id }}">{{ $user->role->display_name }}</option>
                         </select>
                     </div>
                 </div>

@@ -1,3 +1,6 @@
+@php
+$user = Auth::guard('panel')->user() ?? (object)[];
+@endphp
 <aside id="sidebar_main">
     
     <div class="sidebar_main_header">
@@ -23,6 +26,7 @@
                 </a>
             </li>
             
+            @if($user->hasRole('admin'))
             <li>
                 <a href="javascript:;">
                     <span class="menu_icon"><i class="material-icons">&#xE87C;</i></span>
@@ -32,15 +36,23 @@
                     <li><a href="{{ route('panel.employee.index') }}">Employee</a></li>
                     <li><a href="{{ route('panel.employee.create') }}">Add Employee</a></li>
                 </ul>
-            </li>
-
+            </li>            
             <li title="Compaints">
                 <a href="{{ route('panel.complaint.index') }}">
                     <span class="menu_icon"><i class="material-icons">&#xE85C;</i></span>
                     <span class="menu_title">Compaints</span>
                 </a>
             </li>
+            @endif
             
+            @if($user->hasRole('engineer'))
+            <li title="Compaints">
+                <a href="{{ route('panel.jobs.index') }}">
+                    <span class="menu_icon"><i class="material-icons">&#xE85C;</i></span>
+                    <span class="menu_title">Assign Jobs</span>
+                </a>
+            </li>
+            @endif
         </ul>
     </div>
 </aside><!-- main sidebar end -->

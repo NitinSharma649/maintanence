@@ -204,7 +204,19 @@
 
 
         });
+
+        $(document).on('click', `[data-delete-button]`, function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $this=$(this)
+            UIkit.modal.confirm("Do you want delete ? <br>By deleting related data might be deleted as well", function(resolve){
+                $this.parent().find(`[data-delete-form]`).submit();
+            });
+        });
+
     </script>
+
+    
     @if (session('success'))
     <script type="text/javascript">
         toastr.success("{{ session('success') }}", 'Success');

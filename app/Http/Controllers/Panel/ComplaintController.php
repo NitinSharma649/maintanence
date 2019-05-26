@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Role;
 use App\User;
-
+use App\Maintenance;
 class ComplaintController extends BaseController
 {
     public function __construct(){
@@ -14,7 +14,7 @@ class ComplaintController extends BaseController
     }
 
     public function index(){
-        $complaints = User::where('role_id', 2)->get();
+        $complaints = Maintenance::where('status', 0)->get();
         return view('panel.website.complaint.index', compact('complaints'));
     }
 
@@ -28,7 +28,7 @@ class ComplaintController extends BaseController
     }
 
     public function show($complaint){
-        return redirect()->route('panel.complaint.show');
+        // return redirect()->route('panel.complaint.show');
     }
 
     public function edit($complaint){

@@ -5,8 +5,11 @@
 @endsection
 
 @section('content')
-<form action="{{ route('panel.employee.store') }}" method="POST" class="uk-form-stacked" id="user_edit_form">
+<form action="{{ empty($user) ? route('panel.employee.store') : route('panel.employee.update') }}" method="POST" class="uk-form-stacked" id="user_edit_form">
     @csrf
+    if(!empty($user))
+    @method('put')
+    @endif
     <div class="uk-grid" data-uk-grid-margin>
         <div class="uk-width-large-7-10">
             <div class="md-card">

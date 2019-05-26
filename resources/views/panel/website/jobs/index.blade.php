@@ -36,19 +36,23 @@
             {{--  <div class="md-card-list-header md-card-list-header-combined heading_list" style="display: none">All Messages</div>  --}}
             <div class="md-card-list-header md-card-list-header-combined heading_list">All Complaints</div>
             <ul class="hierarchical_slide">
-                @foreach ($complaints as $complaint)
+                @foreach ($jobs as $job)
                 <li>
                     <div class="md-card-list-item-menu" data-uk-dropdown="{mode:'click',pos:'bottom-right'}">
                         <a href="#" class="md-icon material-icons">&#xE5D4;</a>
                         <div class="uk-dropdown uk-dropdown-small">
                             <ul class="uk-nav">
+                                @if($job->status==0)
                                 <li><a href="#"><i class="material-icons">&#xE15E;</i> Reply</a></li>
-                                <li><a href="{{ route('panel.assign_job.index', ['complaint_id'=>$complaint->id]) }}"><i class="material-icons">&#xE149;</i> Assign Job</a></li>
-                                <li><a href="#"><i class="material-icons">&#xE872;</i> Delete</a></li>
+                                <li><a href="{{ route('panel.jobs.changeStatus', ['jobs'=>$job->id, 'status'=>1]) }}"><i class="material-icons">edit</i> Approve </a></li>
+                                <li><a href="{{ route('panel.jobs.changeStatus', ['jobs'=>$job->id, 'status'=>3]) }}"><i class="material-icons">&#xE872;</i> Reject </a></li>
+                                @elseif($job->status == 1)
+                                <li><a href="{{ route('panel.jobs.changeStatus', ['jobs'=>$job->id, 'status'=>2]) }}"><i class="material-icons">edit</i> Completed </a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
-                    <span class="md-card-list-item-date">{{ date('d M Y', strtotime($complaint->created_at)) }}</span>
+                    <span class="md-card-list-item-date">{{ date('d M Y', strtotime($job->complaint->created_at)) }}</span>
                     <div class="md-card-list-item-select">
                         <input type="checkbox" data-md-icheck />
                     </div>
@@ -56,23 +60,23 @@
                         <span class="md-card-list-item-avatar md-bg-grey"></span>
                     </div>
                     <div class="md-card-list-item-sender">
-                        <span>{{ $complaint->email }}</span>
+                        <span>{{ $job->complaint->email }}</span>
                     </div>
                     <div class="md-card-list-item-subject">
                         <div class="md-card-list-item-sender-small">
-                            <span>{{ $complaint->email }}</span>
+                            <span>{{ $job->complaint->email }}</span>
                         </div>
-                        <span>{{ $complaint->issue }}</span>
+                        <span>{{ $job->complaint->issue }}</span>
                     </div>
                     <div class="md-card-list-item-content-wrapper">
                         <div class="md-card-list-item-content">
-                            Warranty Number: {{ $complaint->warranty_number }}<br>
+                            Warranty Number: {{ $job->complaint->warranty_number }}<br>
                         </div>
                         <div class="md-card-list-item-content">
-                            {{ $complaint->description }}
+                            {{ $job->complaint->description }}
                         </div>
                         <form class="md-card-list-item-reply" action="javascript:;">
-                            <label for="mailbox_reply_1895">Reply to <span>{{ $complaint->email }}</span></label>
+                            <label for="mailbox_reply_1895">Reply to <span>{{ $job->complaint->email }}</span></label>
                             <textarea class="md-input md-input-full" name="message" id="mailbox_reply_1895" cols="30" rows="4"></textarea>
                             <button class="md-btn md-btn-flat md-btn-flat-primary" type="submit">Send</button>
                         </form>

@@ -16,7 +16,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'role_id',
+        'name',
+        'email',
+        'email_verified_at',
+        'password',
+        'phone',
+        'position',
+        'about',
+        'social',
+        'isActive'
     ];
 
     /**
@@ -35,6 +44,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'social' => 'json'
     ];
 
     public function role(){
@@ -44,4 +54,5 @@ class User extends Authenticatable
     public function hasRole($role){
         return self::role()->where('role', $role)->first();
     }
+
 }
