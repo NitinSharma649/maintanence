@@ -147,43 +147,50 @@
 		var message="", flag=false;
 		$(document).ready(function(){
 			$('#maintenance_form').on('submit',function(e){
-					
-				if($.trim($warranty_number = $('#warranty_number').val()) != ''){
-					window.pageData.checkWarranty.message="", window.pageData.checkWarranty.flag=false;
-					message="", flag=false;
-					$.ajax({
-						url: "{{ url('api/CheckWarrantyNumber') }}",
-						type: "POST",
-						data: {
-							'warranty_number': $('#warranty_number').val()
-						},
-						success: function(response){
-							if(response.status==200){
-								{{--  window.pageData.checkWarranty.flag=true;  --}}
-								flag=true;
-							}else{
-								{{--  window.pageData.checkWarranty.flag=false;
-								window.pageData.checkWarranty.message=response.message;  --}}
-								flag=false;
-								message=response.message;
-							}
-						},
-						error: function(error){
-							console.log(error);
-						}	
-					});
-
-					if(flag){
-						return true;
-					}else{
-						toastr.error(message, 'Error');
-						return false;
-					}
-				}else{
-					toastr.info('warranty number Cannot be empty', 'info');
-				}
+				checkWarrantyMethod();
+			});
+			$(document).on('blur', '#warranty_number', function(){
+				checkWarrantyMethod();
 			});
 		});
+
+
+		function checkWarrantyMethod(){
+			if($.trim($warranty_number = $('#warranty_number').val()) != ''){
+				window.pageData.checkWarranty.message="", window.pageData.checkWarranty.flag=false;
+				message="", flag=false;
+				$.ajax({
+					url: "{{ url('api/CheckWarrantyNumber') }}",
+					type: "POST",
+					data: {
+						'warranty_number': $('#warranty_number').val()
+					},
+					success: function(response){
+						if(response.status==200){
+							{{--  window.pageData.checkWarranty.flag=true;  --}}
+							flag=true;
+						}else{
+							{{--  window.pageData.checkWarranty.flag=false;
+							window.pageData.checkWarranty.message=response.message;  --}}
+							flag=false;
+							message=response.message;
+						}
+					},
+					error: function(error){
+						console.log(error);
+					}	
+				});
+
+				if(flag){
+					return true;
+				}else{
+					toastr.error(message, 'Error');
+					return false;
+				}
+			}else{
+				toastr.info('warranty number Cannot be empty', 'info');
+			}
+		}
 	</script>
     
 @endsection

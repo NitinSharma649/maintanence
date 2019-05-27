@@ -32,17 +32,17 @@ class EmployeeController extends BaseController
     }
 
     public function show(User $employee){
-        return redirect()->route('panel.employee.show');
+        return redirect()->route('panel.employee.show', ['user'=>$employee]);
     }
 
     public function edit(User $employee){
-        dd($employee);
         return view('panel.website.employee.edit-create', ['user'=>$employee]);
     }
     
     public function update(Request $request, User $employee){
+        // dd($request->all());
         $employee->update($request->all());
-        return redirect()->route('panel.employee.index')->with('success', "Employee Updated Successfully");
+        return redirect()->back()->with('success', "Employee Updated Successfully");
     }
 
     public function destroy(Request $request, User $employee){

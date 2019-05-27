@@ -12,6 +12,7 @@ class ApiController extends Controller
 
     public function CheckWarrantyNumber(Request $request){
         try {
+            
             if(!empty($warranty_number = $request->warranty_number)){
                 $warranty = Warranty::where('warranty_number', $warranty_number)->get();
                 if(count($warranty)>0){

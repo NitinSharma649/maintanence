@@ -1,14 +1,11 @@
 @extends('panel.layouts.main')
 
-{{--  @php
-    $
-@endphp  --}}
 @section('css')
 
 @endsection
 
 @section('content')
-<form action="{{ empty($user) ? route('panel.employee.store') : route('panel.employee.update', $user) }}" method="POST" class="uk-form-stacked" id="user_edit_form">
+<form action="{{ empty($user) ? route('panel.profile.store') : route('panel.profile.update', $user) }}" method="POST" class="uk-form-stacked" id="user_edit_form">
     @csrf
     @if(!empty($user))
     @method('put')
@@ -115,7 +112,7 @@
                                                         <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
                                                     </span>
                                                     <label>Phone Number</label>
-                                                    <input type="text" min="10" max="13" class="md-input" name="phone" value="{{ empty($user) ? '' : $user->phone }}" required/>
+                                                    <input type="text" class="md-input" name="user_edit_phone" value="{{ empty($user) ? '' : $user->phone }}" />
                                                 </div>
                                             </div>
                                             

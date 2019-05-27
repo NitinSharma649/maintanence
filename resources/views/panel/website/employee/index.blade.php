@@ -35,7 +35,7 @@
                         <td>{{ $employee->email }}</td>
                         <td>{{ $employee->role->role }}</td>
                         <td class="uk-text-center">
-                            <a href="{{ route('panel.employee.show', $employee->id) }}"><i class="md-icon material-icons">remove_red_eye</i></a>
+                            {{--  <a href="{{ route('panel.employee.show', $employee->id) }}"><i class="md-icon material-icons">remove_red_eye</i></a>  --}}
                             <a href="{{ route('panel.employee.edit', $employee->id) }}"><i class="md-icon material-icons">edit</i></a>
                             <a data-delete-button href="javascript:;">
                                 <i class="md-icon material-icons">&#xE872;</i>
